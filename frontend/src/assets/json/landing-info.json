@@ -1,0 +1,30 @@
+{
+  "img": "https://firebasestorage.googleapis.com/v0/b/jr-tilak.appspot.com/o/others%2Fjrtilak-min.jpg?alt=media&token=4f969375-3bfe-4c45-8ac3-937d53b5b022",
+  "cvLink": "https://firebasestorage.googleapis.com/v0/b/jr-tilak.appspot.com/o/others%2Fjrtilak-cv.pdf?alt=media&token=9e891347-dc20-485c-b9d9-302052be5ea8&_gl=1*e3zbzk*_ga*MTU1NzY2NDMwNC4xNjk3ODg0NTk1*_ga_CW55HF8NVT*MTY5OTM2OTYwOC40NS4xLjE2OTkzNjk4NDQuNDUuMC4w",
+  "name": "jrTilak",
+  "titles": ["Full Stack Developer", "CS Student", "Freelancer"],
+  "stats": [
+    {
+      "count": "3",
+      "desc": "Completed 3+ projects.",
+      "type": "Projects"
+    },
+    {
+      "count": "2",
+      "desc": "2 certifications from hackathons, courses etc",
+      "type": "Certifications"
+    },
+    {
+      "count": "0",
+      "desc": "0 open source contributions till now",
+      "type": "OS Contributions"
+    },
+    {
+      "count": "1.1 yrs",
+      "desc": "I have 1.1 yrs+ years of experience.",
+      "type": "Experience"
+    }
+  ],
+  "about": "🙋\u200d♂️ Greetings! I'm Tilak Thapa(jrTilak), a passionate web developer with more than 1 years of experience. I specialize web development in `React and Next.js`. I'm also a huge fan of open-source. I'm currently looking for opportunities to work as a Full Stack Developer.",
+  "greetings": "Hey!"
+}

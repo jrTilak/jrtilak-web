@@ -1,0 +1,28 @@
+/* fonts */
+/* futura pt main font  */
+@font-face {
+  font-family: futura;
+  src: url("../../assets/fonts/futura.ttf");
+}
+
+/* nex is for heading  */
+@font-face {
+  font-family: nexa;
+  src: url("../../assets/fonts/nexa.otf");
+}
+
+/* stickyard cursive font for highlight  */
+@font-face {
+  font-family: stackyard;
+  src: url("../../assets/fonts/stackyard.ttf");
+}
+@font-face {
+  font-family: kaushanScript;
+  src: url("../../assets/fonts/KaushanScript.ttf");
+}
+
+/* victor mono for code for onspaces font  */
+@font-face {
+  font-family: victor;
+  src: url("../../assets/fonts/victor-mono.ttf");
+}

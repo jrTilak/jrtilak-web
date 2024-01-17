@@ -1,0 +1,7 @@
+* {
+  font-family: futura;
+}
+::selection {
+  color: rgb(134, 26, 134);
+  background-color: rgba(229, 136, 152, 0.599);
+}
