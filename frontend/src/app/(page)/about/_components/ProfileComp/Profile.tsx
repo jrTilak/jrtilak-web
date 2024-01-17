@@ -1,7 +1,7 @@
 import Image from "next/image";
 import coverPlaceholder from "@/assets/img/cover.jpg";
 import avatarPlaceholder from "@/assets/img/avatarPlaceholder.jpg";
-import {socialLinks} from "@/assets/json/SocialLinks"
+import {socialLinks} from "@/components/shared/SocialLinks"
 import SocialIcon from "./SocialIcon";
 import { AboutDocType } from "@/types/others/about.types";
 

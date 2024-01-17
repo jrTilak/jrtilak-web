@@ -16,7 +16,7 @@ import {
 import { useToast } from "@/components/ui/use-toast";
 import { Button } from "../ui/button";
 import generateId, { formatDateTime } from "@/utils/generateId";
-import { socialLinks } from "@/assets/json/SocialLinks";
+import { socialLinks } from "@/components/shared/SocialLinks";
 import { ContactFormDocType } from "@/types/contact/contact.types";
 import {
   ContactFormInitialValues,
