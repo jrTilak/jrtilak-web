@@ -1,4 +1,3 @@
-import { BlogDocType } from "@/types/blogs/blog.type";
 import {
   LandingInfoDocTypes,
   StatsInLandingDocTypes,
@@ -47,6 +46,4 @@ export interface TopSkillsProps {
 export interface FeaturedProjectsProps {
   featuredProjects: ProjectDocType[] | null;
 }
-export interface LatestBlogsProps {
-  latestBlogs: BlogDocType[] | null;
-}
+
