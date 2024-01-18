@@ -2,8 +2,7 @@
 import { useEffect, useState } from "react";
 import TechCircleCard from "./TechCircleCard";
 import { TechCardListsPropsType } from "./types";
-
-const WEBSITE_URL = process.env.NEXT_PUBLIC_WEBSITE_URL;
+import { ICONS } from "@/assets/json/icons";
 
 const TechCardLists = ({ techs }: TechCardListsPropsType) => {
   const [techsList, setTechsList] = useState(
@@ -11,18 +10,22 @@ const TechCardLists = ({ techs }: TechCardListsPropsType) => {
   );
 
   useEffect(() => {
-    const getData = async () => {
-      const res = await fetch(`${WEBSITE_URL}/api/v1/icons`, {
-        method: "GET",
-        headers: {
-          title: techs.join(","),
-        },
+    setTechsList(() => {
+      return techs?.map((tech) => {
+        const icon =
+          ICONS[
+            tech
+              .toLowerCase()
+              .replace(" ", "_")
+              .replace(".", "_") as keyof typeof ICONS
+          ];
+        return {
+          title: tech,
+          icon,
+        };
       });
-      const data = await res.json();
-      setTechsList(data.icons);
-    };
-    getData();
-  }, [techs]);
+    });
+  }, []);
 
   const [windowWidth, setWindowWidth] = useState(0);
   const [visibleTechCards, setVisibleTechCards] = useState(5);
