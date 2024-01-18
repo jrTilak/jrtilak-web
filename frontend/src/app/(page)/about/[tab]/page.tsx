@@ -3,54 +3,41 @@ import AboutTab from "../_components/AboutTab/AboutTab";
 import Profile from "../_components/ProfileComp/Profile";
 import TabButtons from "../_components/Tabs/TabButtons";
 import { Tabs } from "../_components/Tabs/Tabs";
-import { AboutDocType } from "@/types/others/about.types";
-import { CertificationType } from "@/types/others/certification.types";
-import { TimelineProps } from "@/types/Journey/timeline.types";
-import { sortTimelineData } from "@/utils/sortTimelineData";
-import { SkillsCollectionType } from "@/types/skills/skills.types";
 import SkillsTab from "../_components/SkillsTab/SkillsTab";
 import EducationTab from "../_components/EducationTab/EducationTab";
 import CertificationTab from "../_components/CertificationTab/CertificationTab";
 import ExperienceTab from "../_components/ExperienceTab/ExperienceTab";
-import { AboutTabsType } from "../types";
-import aboutJSON from "@/assets/json/about.json";
-import skillsJSON from "@/assets/json/skills.json";
-import educationJSON from "@/assets/json/education.json";
-import cerficiationsJSON from "@/assets/json/certifications.json";
+import ABOUT_JSON from "@/assets/json/about";
 
 const Page = async ({ params }: { params: { tab: string } }) => {
   const qTab = decodeURIComponent(params.tab);
-  const about = await getAboutDoc();
-  const skills = await getSkillsCollection();
-  const education = await getEducationDoc();
-  const certifications = await getCertifications();
 
   const isValidTab = Tabs.map((tab) => tab.title.toLowerCase()).includes(qTab);
-  let activeTab: AboutTabsType = "about";
+  let activeTab = "about";
   if (isValidTab) {
-    activeTab = qTab as AboutTabsType;
+    activeTab = qTab;
   }
 
   return (
     <>
       <div className="flex flex-col mx-auto gap-4 items-center w-full md:w-[80vw] min-h-screen">
-        <Profile about={about} />
+        <Profile />
         <hr className="w-full h-[0.5px] mt-32 sm:mt-20 bg-gray-200 border-0 rounded dark:bg-gray-700" />
         <TabButtons activeTab={isValidTab ? activeTab : "about"} />
         {(() => {
           switch (activeTab) {
             case "about":
-              return <AboutTab aboutMd={about?.aboutMd} />;
+              return <AboutTab />;
             case "skills":
-              return <SkillsTab activeTab="techs" skills={skills} />;
+              return <SkillsTab activeTab="techs" />;
             case "education":
-              return <EducationTab education={education} />;
+              return <EducationTab />;
             case "certifications":
-              return <CertificationTab certifications={certifications} />;
+              return <CertificationTab />;
             case "experience":
               return <ExperienceTab />;
             default:
-              return <AboutTab aboutMd={about?.aboutMd} />;
+              return <AboutTab />;
           }
         })()}
       </div>
@@ -69,7 +56,7 @@ export async function generateStaticParams() {
 
 //generate metadata for the page
 export const generateMetadata = async (): Promise<Metadata> => {
-  const about = await getAboutDoc();
+  const about = ABOUT_JSON;
   return {
     title: `About | ${about?.nickname}`,
     openGraph: {
@@ -81,33 +68,4 @@ export const generateMetadata = async (): Promise<Metadata> => {
       ],
     },
   };
-};
-
-const getAboutDoc = async () => {
-  const about = aboutJSON;
-  const mdRes = await fetch(about.aboutMd, {
-    method: "GET",
-    next: {
-      revalidate: 3600,
-    },
-  });
-  const mdContent = await mdRes.text();
-  return {
-    ...about,
-    aboutMd: mdContent,
-  } as AboutDocType;
-};
-
-const getSkillsCollection = async () => {
-  return skillsJSON as SkillsCollectionType;
-};
-
-const getEducationDoc = async () => {
-  const education: TimelineProps[] = Object.values(educationJSON);
-  return sortTimelineData(education);
-};
-
-const getCertifications = async () => {
-  const certifications: CertificationType[] = Object.values(cerficiationsJSON);
-  return certifications;
 };

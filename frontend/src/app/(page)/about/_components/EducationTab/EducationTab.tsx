@@ -1,7 +1,8 @@
-import { TimelineProps } from "@/types/Journey/timeline.types";
+import ABOUT_JSON from "@/assets/json/about";
 import { Check, Flame } from "lucide-react";
 
-const EducationTab = ({ education }: { education: TimelineProps[] | null }) => {
+const EducationTab = () => {
+  const education = ABOUT_JSON.education;
   return (
     <>
       <div className="w-full mx-auto max-w-5xl">
@@ -37,7 +38,7 @@ const EducationTab = ({ education }: { education: TimelineProps[] | null }) => {
                         </time>
                       )}
                     </div>
-                    <div >
+                    <div>
                       <h3 className="text-foreground font-semibold">
                         {education.title}
                       </h3>

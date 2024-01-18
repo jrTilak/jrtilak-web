@@ -1,7 +1,8 @@
-import { StatsProps } from "../../types";
+import ABOUT_JSON from "@/assets/json/about";
 import StatsCard from "./StatsCard";
 
-const Stats = ({ stats }: StatsProps) => {
+const Stats = () => {
+  const stats = ABOUT_JSON.stats;
   return (
     <div
       className={
@@ -10,7 +11,7 @@ const Stats = ({ stats }: StatsProps) => {
     >
       <div className="grid gap-3 grid-cols-2 xs:grid-cols-4 mt-4">
         {stats.map((statsInfo, index: number) => (
-          <StatsCard key={index} stats={statsInfo} />
+          <StatsCard key={index} {...statsInfo} />
         ))}
       </div>
     </div>

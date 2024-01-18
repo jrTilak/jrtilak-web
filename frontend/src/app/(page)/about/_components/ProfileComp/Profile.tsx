@@ -1,11 +1,11 @@
 import Image from "next/image";
 import coverPlaceholder from "@/assets/img/cover.jpg";
 import avatarPlaceholder from "@/assets/img/avatarPlaceholder.jpg";
-import {socialLinks} from "@/components/shared/SocialLinks"
+import { socialLinks } from "@/components/shared/SocialLinks";
 import SocialIcon from "./SocialIcon";
-import { AboutDocType } from "@/types/others/about.types";
-
-export default function Profile({ about }: { about: AboutDocType | null }) {
+import ABOUT_JSON from "@/assets/json/about";
+export default function Profile() {
+  const about = { ...ABOUT_JSON };
   return (
     <>
       {/* image  */}

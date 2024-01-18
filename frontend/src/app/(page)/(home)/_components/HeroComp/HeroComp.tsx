@@ -4,10 +4,12 @@ import About from "./About";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import HeroImg from "./HeroImg";
-import { HeroCompProps } from "../../types";
+
+import ABOUT_JSON from "@/assets/json/about";
+
 import { ArrowRight, Download } from "lucide-react";
-const HeroComp = ({ landingInfo }: HeroCompProps) => {
-  const { greetings, name, titles, about, cvLink, img, stats } = landingInfo;
+const HeroComp = () => {
+  const { greetings, name, titles, about, cvLink, img } = ABOUT_JSON;
   return (
     <section className="w-full">
       <div className="flex flex-col justify-between gap-4 px-4 pt-12 mx-auto sm:flex-row sm:pt-20 lg:pt-24">
@@ -18,11 +20,7 @@ const HeroComp = ({ landingInfo }: HeroCompProps) => {
           <MyTitle name={name} titles={titles} />
           <About about={about} />
           <div className="flex flex-col gap-2 xs:flex-row sm:gap-4">
-            <Link
-              href="/jrtilak-cv.pdf"
-              download="/jrtilak-cv.pdf"
-              target="_blank"
-            >
+            <Link href={cvLink} download target="_blank">
               <Button variant="purple" className="w-full xs:w-auto">
                 <span>Download DV</span>
                 <Download className="ml-2 h-4 w-4" />
@@ -42,7 +40,7 @@ const HeroComp = ({ landingInfo }: HeroCompProps) => {
         <HeroImg img={img} />
       </div>
       <div className="inline-flex flex-col items-center justify-center w-full gap-4 sm:relative sm:gap-0 sm:my-24">
-        <Stats stats={stats} />
+        <Stats />
         <hr className="h-[0.1rem] bg-primary bg-opacity-40 w-full mb-5 sm:mb-0" />
       </div>
     </section>

@@ -2,12 +2,19 @@ import Image from "next/image";
 import Link from "next/link";
 import React from "react";
 import placeholderImg from "@/assets/img/projectPlaceholder.jpg";
-import { CertificationType } from "@/types/others/certification.types";
+
+interface CertificationCardProps {
+  href: string;
+  title: string;
+  type: string;
+  _id: string;
+  img: string;
+}
 
 const CertificationCard = ({
   certification,
 }: {
-  certification: CertificationType;
+  certification: CertificationCardProps;
 }) => {
   return (
     <div className="rounded overflow-hidden shadow-lg flex flex-col md:hover:scale-105 transition-all">

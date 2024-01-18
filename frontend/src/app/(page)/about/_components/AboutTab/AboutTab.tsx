@@ -1,6 +1,6 @@
-import RenderHtml from "@/components/Renderer/RenderHtml";
+import RenderMarkdown from "@/components/Renderer/RenderMarkdown";
 import { AboutTabProps } from "../../types";
 
 export default function AboutTab({ aboutMd }: AboutTabProps) {
-  return <RenderHtml html={aboutMd} />;
+  return <RenderMarkdown html={aboutMd} />;
 }

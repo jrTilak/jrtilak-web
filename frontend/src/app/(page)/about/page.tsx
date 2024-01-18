@@ -3,7 +3,7 @@ import TabsComp from "./_components/Tabs/TabButtons";
 import { Metadata } from "next";
 import { AboutDocType } from "@/types/others/about.types";
 import AboutTab from "./_components/AboutTab/AboutTab";
-import aboutJSON from "@/assets/json/about.json";
+import aboutJSON from "@/assets/json/about";
 
 const page = async () => {
   const about = await getAboutDoc();

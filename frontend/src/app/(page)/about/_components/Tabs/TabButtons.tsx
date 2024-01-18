@@ -1,7 +1,6 @@
-import { TabButtonsProps } from "../../types";
 import { Tabs } from "./Tabs";
 import Link from "next/link";
-export default function TabButtons({ activeTab }: TabButtonsProps) {
+export default function TabButtons({ activeTab }: { activeTab: string }) {
   const inActiveIconClassName =
     "w-5 h-5 mr-2 text-muted-foreground group-hover:text-gray-500 ";
   const activeIconClassName = "w-5 h-5 mr-2 text-primary";

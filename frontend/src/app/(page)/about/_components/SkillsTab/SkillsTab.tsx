@@ -1,15 +1,12 @@
-import { SkillsCollectionType } from "@/types/skills/skills.types";
 import SkillsComp from "./SkillsComp";
 import { skillTabs } from "./SkillTabs";
 import Link from "next/link";
-import { TabsType } from "../../types";
 
 interface SkillsTabProps {
-  activeTab: TabsType;
-  skills: SkillsCollectionType | null;
+  activeTab: string;
 }
 
-const SkillsTab = ({ activeTab, skills }: SkillsTabProps) => {
+const SkillsTab = ({ activeTab }: SkillsTabProps) => {
   return (
     <div className="mt-4 min-w-full">
       <div className="flex flex-wrap gap-2 sm:gap-4 sticky top-[110px] z-10">
@@ -43,7 +40,7 @@ const SkillsTab = ({ activeTab, skills }: SkillsTabProps) => {
         })}
       </div>{" "}
       <div className="pt-2 mt-6">
-        <SkillsComp skills={skills} skillTab={activeTab} />
+        <SkillsComp skillTab={activeTab} />
       </div>
     </div>
   );

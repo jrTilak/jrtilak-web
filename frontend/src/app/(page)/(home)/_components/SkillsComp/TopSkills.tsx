@@ -1,17 +1,9 @@
 import SkillsListComp from "@/components/SkillsCards/SkillCards/SkillsListComp";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
-import { ChevronRight } from "lucide-react";
-
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/components/ui/tooltip";
 import CoreSkillsListComp from "@/components/SkillsCards/CoreSkillCards/CoreSkillsListComp";
-import { TopSkillsProps } from "../../types";
-const TopSkills = ({ topSkills, coreSkills }: TopSkillsProps) => {
+import SKILLS_JSON from "@/assets/json/skills";
+const TopSkills = () => {
+  const coreSkills = SKILLS_JSON.core;
+  const topSkills = [...SKILLS_JSON.techs.filter((tech) => tech.isFeatured)];
   return (
     <div className="">
       <div className="flex items-center justify-between mb-2 sm:mb-4 ">

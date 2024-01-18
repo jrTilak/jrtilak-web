@@ -1,7 +1,6 @@
 import Image from "next/image";
-import { HeroImgProps } from "../../types";
 
-const HeroImg = ({ img }: HeroImgProps) => {
+const HeroImg = ({ img }: { img: string }) => {
   return (
     <div className="items-center justify-center mx-auto my-auto sm:flex lg:translate-y-0">
       <Image

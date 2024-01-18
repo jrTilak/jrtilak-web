@@ -1,8 +1,13 @@
-import { SkillsCompProps } from "../../types";
+import SKILLS_JSON from "@/assets/json/skills";
 import CoreSkillCard from "@/components/SkillsCards/CoreSkillCards/CoreSkillCard";
 import SkillCard from "@/components/SkillsCards/SkillCards/SkillCard";
 
-const SkillsComp = ({ skills, skillTab }: SkillsCompProps) => {
+interface SkillsCompProps {
+  skillTab: string;
+}
+
+const SkillsComp = ({ skillTab }: SkillsCompProps) => {
+  const skills = SKILLS_JSON;
   return (
     <section>
       {(() => {
