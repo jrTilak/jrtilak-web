@@ -1,11 +1,12 @@
+import SKILLS_JSON from "@/assets/json/skills";
 import { Suspense } from "react";
-import { CoreSkillsListCompProps } from "../types";
 import CoreSkillCard from "./CoreSkillCard";
 
-const CoreSkillsListComp = ({ coreSkills }: CoreSkillsListCompProps) => {
+const CoreSkillsListComp = () => {
+
   return (
     <div className="flex flex-col justify-center gap-4 lg:min-h-[250px]">
-      {coreSkills?.map((coreSkill) => {
+      {SKILLS_JSON.core?.map((coreSkill) => {
         return (
           <Suspense key={coreSkill._id}>
             <CoreSkillCard coreSkill={coreSkill} />

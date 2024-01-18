@@ -14,7 +14,7 @@ const TopSkills = () => {
         <SkillsListComp />
         <div className="h-[300px] hidden md:block w-0.5 rounded-md self-stretch bg-gradient-to-tr from-transparent via-muted-foreground to-transparent opacity-20 dark:opacity-100" />
         <hr className="h-0.5 w-full md:hidden" />
-        <CoreSkillsListComp coreSkills={coreSkills} />
+        <CoreSkillsListComp />
       </div>
     </div>
   );
