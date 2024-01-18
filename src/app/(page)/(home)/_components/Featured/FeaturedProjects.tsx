@@ -1,5 +1,7 @@
 import ProjectCard from "@/components/ProjectCards/ProjectCard";
 import PROJECTS_JSON from "@/assets/json/projects";
+import { Button } from "@/components/ui/button";
+import Link from "next/link";
 const FeaturedProjects = () => {
   const featuredProjects = PROJECTS_JSON.filter(
     (project) => project.isFeatured
@@ -17,6 +19,13 @@ const FeaturedProjects = () => {
             return <ProjectCard key={project._id} {...project} />;
           }
         })}
+      </div>
+      <div className="flex items-center w-[60%] m-auto">
+        <span className="flex-grow bg-muted-foreground rounded h-0.5"></span>
+        <Link href="/projects">
+          <Button variant="ghost">See more</Button>
+        </Link>
+        <span className="flex-grow bg-muted-foreground rounded h-0.5"></span>
       </div>
     </div>
   );
