@@ -8,6 +8,7 @@ const nextConfig = {
       "camo.githubusercontent.com",
       "raw.githubusercontent.com",
       "lh3.googleusercontent.com",
+      "udemy-certificate.s3.amazonaws.com",
     ],
   },
 };
