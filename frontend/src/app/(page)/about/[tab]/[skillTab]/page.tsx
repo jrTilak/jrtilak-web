@@ -1,4 +1,3 @@
-import { convertMarkdownToHtml } from "@/utils/convertMarkdownToHtml";
 import { Metadata } from "next";
 import { AboutDocType } from "@/types/others/about.types";
 import SkillsTab from "../../_components/SkillsTab/SkillsTab";
@@ -69,10 +68,9 @@ const getAboutDoc = async () => {
     },
   });
   const mdContent = await mdRes.text();
-  const html = await convertMarkdownToHtml(mdContent);
   return {
     ...about,
-    aboutMd: html,
+    aboutMd: mdContent,
   } as AboutDocType;
 };
 

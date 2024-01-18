@@ -1,6 +1,5 @@
 import Profile from "./_components/ProfileComp/Profile";
 import TabsComp from "./_components/Tabs/TabButtons";
-import { convertMarkdownToHtml } from "@/utils/convertMarkdownToHtml";
 import { Metadata } from "next";
 import { AboutDocType } from "@/types/others/about.types";
 import AboutTab from "./_components/AboutTab/AboutTab";
@@ -46,9 +45,8 @@ const getAboutDoc = async () => {
     },
   });
   const mdContent = await mdRes.text();
-  const html = await convertMarkdownToHtml(mdContent);
   return {
     ...about,
-    aboutMd: html,
+    aboutMd: mdContent,
   } as AboutDocType;
 };

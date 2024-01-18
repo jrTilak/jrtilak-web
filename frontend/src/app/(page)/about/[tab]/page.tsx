@@ -3,7 +3,6 @@ import AboutTab from "../_components/AboutTab/AboutTab";
 import Profile from "../_components/ProfileComp/Profile";
 import TabButtons from "../_components/Tabs/TabButtons";
 import { Tabs } from "../_components/Tabs/Tabs";
-import { convertMarkdownToHtml } from "@/utils/convertMarkdownToHtml";
 import { AboutDocType } from "@/types/others/about.types";
 import { CertificationType } from "@/types/others/certification.types";
 import { TimelineProps } from "@/types/Journey/timeline.types";
@@ -93,10 +92,9 @@ const getAboutDoc = async () => {
     },
   });
   const mdContent = await mdRes.text();
-  const html = await convertMarkdownToHtml(mdContent);
   return {
     ...about,
-    aboutMd: html,
+    aboutMd: mdContent,
   } as AboutDocType;
 };
 

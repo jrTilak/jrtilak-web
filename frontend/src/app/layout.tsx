@@ -1,6 +1,5 @@
 import "@/app/styles/globals.css";
 import { ThemeProvider } from "@/context/ThemeProvider";
-import { Toaster } from "@/components/ui/toaster";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
@@ -89,7 +88,6 @@ export default function RootLayout({
       >
         <body className="h-full w-full">
           {children}
-          <Toaster />
         </body>
       </ThemeProvider>
     </html>

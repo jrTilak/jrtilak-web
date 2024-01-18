@@ -1,4 +1,3 @@
-import { HiMiniArrowSmallRight } from "react-icons/hi2";
 import MyTitle from "./MyTitle";
 import Stats from "./StatsList";
 import About from "./About";
@@ -6,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import HeroImg from "./HeroImg";
 import { HeroCompProps } from "../../types";
-import { MdOutlineDownload } from "react-icons/md";
+import { ArrowRight, Download } from "lucide-react";
 const HeroComp = ({ landingInfo }: HeroCompProps) => {
   const { greetings, name, titles, about, cvLink, img, stats } = landingInfo;
   return (
@@ -26,7 +25,7 @@ const HeroComp = ({ landingInfo }: HeroCompProps) => {
             >
               <Button variant="purple" className="w-full xs:w-auto">
                 <span>Download DV</span>
-                <MdOutlineDownload className="w-4 h-4 ml-2" />
+                <Download className="ml-2 h-4 w-4" />
               </Button>
             </Link>
             <Button variant="ghost" className="xs:w-auto">
@@ -35,7 +34,7 @@ const HeroComp = ({ landingInfo }: HeroCompProps) => {
                 className="inline-flex items-center justify-center text-center "
               >
                 Let&apos;s Talk
-                <HiMiniArrowSmallRight className="w-4 h-4 ml-2" />
+                <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
           </div>

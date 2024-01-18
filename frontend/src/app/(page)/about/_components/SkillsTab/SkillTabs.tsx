@@ -1,9 +1,7 @@
-import { AiOutlineCode } from "react-icons/ai";
-import { CgCodeSlash } from "react-icons/cg";
-import { ImFire } from "react-icons/im";
+import { Code2, Flame, GitBranchPlus } from "lucide-react";
 
 export const skillTabs = [
-  { name: "techs", Icon: ImFire },
-  { name: "tools", Icon: AiOutlineCode },
-  { name: "core", Icon: CgCodeSlash },
+  { name: "techs", Icon: Code2 },
+  { name: "tools", Icon: GitBranchPlus },
+  { name: "core", Icon: Flame },
 ];

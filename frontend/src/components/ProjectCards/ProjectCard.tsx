@@ -1,6 +1,3 @@
-import { AiFillGithub } from "react-icons/ai";
-import { MdKeyboardDoubleArrowRight } from "react-icons/md";
-import { BsInfoCircle } from "react-icons/bs";
 import Image from "next/image";
 import Link from "next/link";
 import TechCardLists from "./TechCardLists";
@@ -15,6 +12,7 @@ import {
 } from "@/components/ui/tooltip";
 import { ProjectDocType } from "@/types/projects/project.types";
 import { Suspense } from "react";
+import { ChevronsRight, Github, Info } from "lucide-react";
 const ProjectCard = ({
   type,
   img,
@@ -69,7 +67,7 @@ const ProjectCard = ({
                     href={sourceCode}
                     className=" group cursor-pointer relative p-3 text-foreground"
                   >
-                    <AiFillGithub className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <Github className="w-5 h-5 sm:w-6 sm:h-6" />
                   </Link>
                 </Button>
               </TooltipTrigger>
@@ -86,7 +84,7 @@ const ProjectCard = ({
             >
               <span className="inline-flex items-center justify-center">
                 <span>View Live</span>
-                <MdKeyboardDoubleArrowRight className="w-5 h-5 sm:w-6 sm:h-6" />
+                <ChevronsRight className="w-5 h-5 sm:w-6 sm:h-6" />
               </span>
             </Link>
           </Button>
@@ -95,10 +93,10 @@ const ProjectCard = ({
               <TooltipTrigger>
                 <Button variant="ghost" className="px-2 py-1">
                   <Link
-                    href={`${sourceCode}/README.md`}
+                    href={`${sourceCode}/blob/master/README.md`}
                     className=" group cursor-pointer relative p-3 text-foreground"
                   >
-                    <BsInfoCircle className="w-5 h-5 sm:w-6 sm:h-6" />
+                    <Info className="w-5 h-5 sm:w-6 sm:h-6" />
                   </Link>
                 </Button>
               </TooltipTrigger>

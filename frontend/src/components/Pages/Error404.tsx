@@ -1,9 +1,5 @@
+import {  ChevronRight, GitCompareArrows, Home, SendHorizontal } from "lucide-react";
 import Link from "next/link";
-import { AiOutlineHome } from "react-icons/ai";
-import { MdChevronRight } from "react-icons/md";
-import { MdOutlineMenuBook } from "react-icons/md";
-import { FaDiagramProject } from "react-icons/fa6";
-import { BiSolidMessageSquareDetail } from "react-icons/bi";
 
 const Error404 = () => {
   const navItems = [
@@ -11,25 +7,19 @@ const Error404 = () => {
       name: "Home",
       desc: "Everything starts here",
       link: "/",
-      Icon: AiOutlineHome,
-    },
-    {
-      name: "Blogs",
-      desc: "Read latest blogs!",
-      link: "/blogs",
-      Icon: MdOutlineMenuBook,
+      Icon: Home ,
     },
     {
       name: "Projects",
       desc: "Check out top projects!",
       link: "/projects",
-      Icon: FaDiagramProject,
+      Icon: GitCompareArrows,
     },
     {
       name: "Contact",
       desc: "Contact for any query :)",
       link: "/contact",
-      Icon: BiSolidMessageSquareDetail,
+      Icon: SendHorizontal,
     },
   ];
   return (
@@ -82,7 +72,7 @@ const Error404 = () => {
                     </div>
 
                     {/* <!-- Chevron --> */}
-                    <MdChevronRight className="text-muted-foreground text-2xl md:text-3xl my-auto pr-2 group-hover:text-primary transition-all duration-200 delay-100" />
+                    <ChevronRight className="text-muted-foreground text-2xl md:text-3xl my-auto pr-2 group-hover:text-primary transition-all duration-200 delay-100" />
                   </Link>
                 </>
               );

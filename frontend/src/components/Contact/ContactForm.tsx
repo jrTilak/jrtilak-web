@@ -1,5 +1,4 @@
 "use client";
-import { MdNavigation } from "react-icons/md";
 import SocialLink from "./SocialLink";
 import { useState, useEffect } from "react";
 import {
@@ -22,6 +21,7 @@ import {
   ContactFormInitialValues,
   isContactValid,
 } from "@/validator/contact/contact.validator";
+import { SendHorizontal } from "lucide-react";
 
 const WEBSITE_URL = process.env.NEXT_PUBLIC_WEBSITE_URL;
 
@@ -267,7 +267,7 @@ const ContactForm: React.FC = () => {
                 type="submit"
               >
                 {isFormSubmitting ? "Sending..." : "Send"}
-                <MdNavigation className="w-5 h-5 rotate-90" />
+                <SendHorizontal className="ml-2 w-4 h-4" />
               </Button>
             </div>
           </div>

@@ -5,17 +5,15 @@ import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
 import ToggleMode from "@/components/Buttons/ToggleMode";
-import { HiMenuAlt2 } from "react-icons/hi";
 import { navLinks } from "../shared/NavLinksList";
 import { socialIcons } from "../shared/SocialIconsList";
-import { AiFillHome, AiOutlineClose } from "react-icons/ai";
 import splitWordsIntoPaths from "@/utils/splitWordsIntoPaths";
 import { cn } from "@/lib/utils";
 import NavLi from "./NavLinkItem";
 import SocialIcon from "./SocialIcon";
 import { Button } from "../ui/button";
 import useScrollTop from "@/hooks/use-scroll-top";
-import { RxDividerVertical } from "react-icons/rx";
+import { GitCommitVertical, Home, Menu, X } from "lucide-react";
 
 // main function
 export default function NavbarComp() {
@@ -66,7 +64,7 @@ export default function NavbarComp() {
               className="navToggleButton inline-flex items-center text-lg rounded-lg transition-all"
             >
               <span className="sr-only">Open sidebar</span>
-              <HiMenuAlt2 className="w-9 h-9 navToggleButton" />
+              <Menu className="w-9 h-9 navToggleButton" />
             </Button>
             <Link href="/">
               <span className=" text-2xl font-semibold whitespace-nowrap ml-2">
@@ -109,7 +107,7 @@ export default function NavbarComp() {
                         href="/"
                         className="inline-flex items-center text-sm opacity-60 font-medium hover:text-primary"
                       >
-                        <AiFillHome className="w-4 h-4 mr-2.5" />
+                        <Home className="w-4 h-4 mr-2.5" />
                         Home
                       </Link>
                     </li>
@@ -167,7 +165,7 @@ export default function NavbarComp() {
                   }
                 })}
               </div>
-              <RxDividerVertical className="h-6 min-w-[1px] bg-purple-900 ml-2 sm:ml-4 sm:mr-2 opacity-50" />
+              <GitCommitVertical className="h-6 min-w-[1px] bg-purple-900 ml-2 sm:ml-4 sm:mr-2 opacity-50" />
               <div className="mr-4">
                 <ToggleMode />
               </div>
@@ -198,7 +196,7 @@ export default function NavbarComp() {
           }}
         >
           <span className="sr-only">Open sidebar</span>
-          <AiOutlineClose className="w-9 h-9 navToggleButton" />
+          <X className="w-9 h-9 navToggleButton" />
         </Button>
 
         <div className="h-full px-3 pb-4 overflow-y-auto pt-8 bg-background  ">

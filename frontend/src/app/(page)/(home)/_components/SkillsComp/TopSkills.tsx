@@ -1,7 +1,8 @@
 import SkillsListComp from "@/components/SkillsCards/SkillCards/SkillsListComp";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
-import { IoIosArrowForward } from "react-icons/io";
+import { ChevronRight } from "lucide-react";
+
 import {
   Tooltip,
   TooltipContent,
@@ -17,20 +18,6 @@ const TopSkills = ({ topSkills, coreSkills }: TopSkillsProps) => {
         <h1 className="mb-4 text-3xl font-semibold leading-none underline xs:text-4xl sm:text-5xl xl:text-6xl underline-offset-4">
           Top Skills
         </h1>
-        <TooltipProvider delayDuration={0}>
-          <Tooltip>
-            <TooltipTrigger>
-              <Button variant="ghost">
-                <Link href="/about">
-                  <IoIosArrowForward className="w-6 h-6" />
-                </Link>
-              </Button>
-            </TooltipTrigger>
-            <TooltipContent>
-              <p>More about me!</p>
-            </TooltipContent>
-          </Tooltip>
-        </TooltipProvider>
       </div>
       <div className="flex flex-col items-center justify-center gap-4 mx-auto md:flex-row">
         <SkillsListComp skills={topSkills} />

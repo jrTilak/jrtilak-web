@@ -1,25 +1,28 @@
-import { BiSolidMessageSquareDetail } from "react-icons/bi";
-import { GiJourney } from "react-icons/gi";
-import { AiFillHome } from "react-icons/ai";
-import { FaDiagramProject } from "react-icons/fa6";
-import { BsFillPersonFill } from "react-icons/bs";
+import {
+  FileText,
+  GitCompareArrows,
+  Home,
+  Route,
+  SendHorizontal,
+  UserRound,
+} from "lucide-react";
 import { NavLinkTypes } from "../Navbar/types";
-import { FiFileText } from "react-icons/fi";
+
 export const navLinks: NavLinkTypes[] = [
   {
     name: "Home",
     href: "/",
-    LinkIcon: AiFillHome,
+    LinkIcon: Home,
   },
   {
     name: "About",
     href: "/about",
-    LinkIcon: BsFillPersonFill,
+    LinkIcon: UserRound,
   },
   {
     name: "Projects",
     href: "/projects",
-    LinkIcon: FaDiagramProject,
+    LinkIcon: GitCompareArrows,
     tag: {
       type: "text",
       content: "9+",
@@ -37,7 +40,7 @@ export const navLinks: NavLinkTypes[] = [
   {
     name: "Journey",
     href: "/journey",
-    LinkIcon: GiJourney,
+    LinkIcon: Route,
     tag: {
       type: "text",
       content: "new",
@@ -51,11 +54,11 @@ export const navLinks: NavLinkTypes[] = [
   {
     name: "Resume",
     href: "/cv",
-    LinkIcon: FiFileText,
+    LinkIcon: FileText,
   },
   {
     name: "Contact",
     href: "/contact",
-    LinkIcon: BiSolidMessageSquareDetail,
+    LinkIcon: SendHorizontal,
   },
 ];
