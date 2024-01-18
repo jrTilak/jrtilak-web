@@ -15,7 +15,6 @@ import {
 import { Button } from "../ui/button";
 import generateId, { formatDateTime } from "@/utils/generateId";
 import { socialLinks } from "@/components/shared/SocialLinks";
-import { ContactFormDocType } from "@/types/contact/contact.types";
 import {
   ContactFormInitialValues,
   isContactValid,
@@ -91,7 +90,7 @@ const ContactForm: React.FC = () => {
   const handleFormDataChange = (e: any) => {
     const targetName = e.target.name;
     const targetValue = e.target.value;
-    setFormData((prev: ContactFormDocType) => {
+    setFormData((prev:any) => {
       return {
         ...prev,
         submittedAt: formatDateTime(new Date()),
@@ -221,7 +220,7 @@ const ContactForm: React.FC = () => {
               <label className=" text-muted-foreground font-bold flex items-center justify-center">
                 <input
                   onChange={(e) => {
-                    setFormData((prev: ContactFormDocType) => {
+                    setFormData((prev:any) => {
                       return {
                         ...prev,
                         isReplyNecessary: !prev.isReplyNecessary,
