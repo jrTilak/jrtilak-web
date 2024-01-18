@@ -12,8 +12,8 @@ const STATS = [
     link: "/about/certifications",
   },
   {
-    count: "0",
-    desc: "0 open source contributions till now",
+    count: "1",
+    desc: "1 open source contributions till now",
     type: "OS Contributions",
     link: "/osc",
   },
@@ -25,7 +25,12 @@ const STATS = [
   },
 ];
 
-const TITLES = ["Full Stack Developer", "CS Student", "Freelancer"];
+const TITLES = [
+  "Full Stack Developer",
+  "MERN Stack",
+  "CS Student",
+  "Freelancer",
+];
 
 const ABOUT =
   "🙋\u200d♂️ Greetings! I'm Tilak Thapa(jrTilak), a passionate web developer with more than 1 years of experience. I specialize web development in `React and Next.js`. I'm also a huge fan of open-source. I'm currently looking for opportunities to work as a Full Stack Developer.";
@@ -73,11 +78,9 @@ const CERTIFICATIONS = [
 
 const ABOUT_JSON = {
   tagline: "React.js Developer | MERN | Next.js",
-  coverImg:
-    "https://firebasestorage.googleapis.com/v0/b/jr-tilak.appspot.com/o/others%2Fcover.jpg?alt=media&token=56733099-6021-47c0-86e1-5d48cb411a92&_gl=1*19kxdx6*_ga*MTU1NzY2NDMwNC4xNjk3ODg0NTk1*_ga_CW55HF8NVT*MTY5OTEwMDA3My4zOC4xLjE2OTkxMDA4MzUuMzguMC4w",
+  coverImg: "/cover-img.jpeg",
   name: "Tilak Thapa",
-  aboutMd: "/about.md",
-  img: "https://firebasestorage.googleapis.com/v0/b/jr-tilak.appspot.com/o/others%2Fjrtilak-min.jpg?alt=media&token=4f969375-3bfe-4c45-8ac3-937d53b5b022&_gl=1*gn8g6k*_ga*MTU1NzY2NDMwNC4xNjk3ODg0NTk1*_ga_CW55HF8NVT*MTY5OTEwMDA3My4zOC4xLjE2OTkxMDA2ODIuNjAuMC4w",
+  img: "/jrtilak.jpg",
   nickname: "jrTilak",
   cvLink: "/jrtilak-cv.pdf",
   titles: TITLES,

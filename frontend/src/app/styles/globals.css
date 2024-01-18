@@ -60,26 +60,4 @@
   body {
     @apply bg-background text-foreground;
   }
-  .prose code {
-    padding: 0.2em 0.4em;
-    margin: 0;
-    font-size: 85%;
-    white-space: break-spaces;
-    @apply bg-muted text-muted-foreground;
-    border-radius: 6px;
-    @apply text-primary;
-  }
-
-  .prose * {
-    @apply text-muted-foreground;
-  }
-
-  .prose h1,
-  .prose h2,
-  .prose h3,
-  .prose h4,
-  .prose h5,
-  .prose h6 {
-    @apply text-foreground;
-  }
 }

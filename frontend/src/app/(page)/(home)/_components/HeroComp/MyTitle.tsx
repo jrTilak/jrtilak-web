@@ -7,6 +7,14 @@ const MyTitle = ({
   name: string;
   titles: (string | number)[];
 }) => {
+  const tilesWithDuration = titles.flatMap((title) => {
+    const titleString = title.toString();
+    const duration =
+      titleString.length * 500 > 4000 ? 4000 : titleString.length * 500;
+    return [titleString, duration];
+  });
+  console.log(tilesWithDuration);
+
   return (
     <h1 className="max-w-2xl mb-2 sm:mb-4 text-3xl font-semibold leading-none tracking-tight xs:text-4xl sm:text-5xl xl:text-6xl  ">
       I&apos;m{" "}
@@ -14,7 +22,7 @@ const MyTitle = ({
         {name}{" "}
       </span>{" "}
       , <br />
-      <TypingAnimation titles={titles} />
+      <TypingAnimation titles={tilesWithDuration} />
     </h1>
   );
 };
