@@ -48,7 +48,7 @@ const ContactForm: React.FC = () => {
       const res = await emailjs.send(
         process.env.NEXT_PUBLIC_EMAILJS_API_KEY || "",
         process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY || "",
-        { ...formData },
+        { ...formData, date: new Date().toLocaleString() },
         process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
       );
       if (res.status === 200) {
