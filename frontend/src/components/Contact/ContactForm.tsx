@@ -15,16 +15,12 @@ import {
 import { Button } from "../ui/button";
 import generateId, { formatDateTime } from "@/utils/generateId";
 import { socialLinks } from "@/components/shared/SocialLinks";
-import {
-  ContactFormInitialValues,
-  isContactValid,
-} from "@/validator/contact/contact.validator";
 import { SendHorizontal } from "lucide-react";
 
 const WEBSITE_URL = process.env.NEXT_PUBLIC_WEBSITE_URL;
 
 const ContactForm: React.FC = () => {
-  const [formData, setFormData] = useState(ContactFormInitialValues);
+  const [formData, setFormData] = useState({});
   const [isFormSubmitting, setIsFormSubmitting] = useState(false);
 
   useEffect(() => {
@@ -44,70 +40,18 @@ const ContactForm: React.FC = () => {
 
   const handleFormSubmit = async (e: any) => {
     e.preventDefault();
-    console.log(formData);
-    const { isValid, validData, message } = isContactValid(formData);
-    // if (!isValid) {
-    //   toast({
-    //     title: "Error",
-    //     description: message,
-    //     variant: "destructive",
-    //   });
-    //   return;
-    // }
-    setIsFormSubmitting(true);
-    const res = await fetch(`${WEBSITE_URL}/api/v1/contact`, {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        uid: "",
-      },
-      body: JSON.stringify(validData),
-    });
-    if (res.status === 200) {
-      // toast({
-      //   title: "Success",
-      //   description: "Your message has been sent successfully.",
-      //   variant: "default",
-      // });
-      setIsFormSubmitting(false);
-      localStorage.removeItem("formData");
-      setFormData(ContactFormInitialValues);
-    } else {
-      // toast({
-      //   title: "Failed",
-      //   description: "Your message could not be sent. Please try again later",
-      //   variant: "destructive",
-      // });
-      setIsFormSubmitting(false);
-    }
   };
 
   const handleFormCancel = () => {
-    setFormData(ContactFormInitialValues);
     localStorage.removeItem("formData");
   };
 
   const handleFormDataChange = (e: any) => {
     const targetName = e.target.name;
     const targetValue = e.target.value;
-    setFormData((prev:any) => {
-      return {
-        ...prev,
-        submittedAt: formatDateTime(new Date()),
-        _id: generateId(prev.subject),
-        [targetName]: targetValue,
-      };
+    setFormData((prev: any) => {
+      return { ...prev, [targetName]: targetValue };
     });
-    // savedata to localstorage
-    localStorage.setItem(
-      "formData",
-      JSON.stringify({
-        ...formData,
-        submittedAt: formatDateTime(new Date()),
-        _id: generateId(formData.subject),
-        [targetName]: targetValue,
-      })
-    );
   };
 
   return (
@@ -153,7 +97,7 @@ const ContactForm: React.FC = () => {
               type="text"
               name="name"
               placeholder="Your Name"
-              value={formData.name}
+              // value={formData.name}
               onChange={(e) => handleFormDataChange(e)}
             />
             {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
@@ -171,7 +115,7 @@ const ContactForm: React.FC = () => {
               type="email"
               name="email"
               placeholder="yourname@example.com"
-              value={formData.email}
+              // value={formData.email}
               onChange={(e) => handleFormDataChange(e)}
             />
           </div>
@@ -191,7 +135,7 @@ const ContactForm: React.FC = () => {
               id="subject"
               type="text"
               placeholder="..."
-              value={formData.subject}
+              // value={formData.subject}
               onChange={(e) => handleFormDataChange(e)}
             />
           </div>
@@ -209,7 +153,7 @@ const ContactForm: React.FC = () => {
               rows={10}
               id="message"
               name="message"
-              value={formData.message}
+              // value={formData.message}
               onChange={(e) => handleFormDataChange(e)}
               placeholder="Hello! I am writing this message ..."
               className="appearance-none block w-full bg-muted text-muted-foreground border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-primary"
@@ -220,7 +164,7 @@ const ContactForm: React.FC = () => {
               <label className=" text-muted-foreground font-bold flex items-center justify-center">
                 <input
                   onChange={(e) => {
-                    setFormData((prev:any) => {
+                    setFormData((prev: any) => {
                       return {
                         ...prev,
                         isReplyNecessary: !prev.isReplyNecessary,
@@ -231,7 +175,7 @@ const ContactForm: React.FC = () => {
                   type="checkbox"
                   id="isReplyNecessary"
                   name="isReplyNecessary"
-                  checked={formData.isReplyNecessary}
+                  // checked={formData.isReplyNecessary}
                 />
                 <span className="text-sm">I want your response ASAP !!</span>
               </label>
