@@ -37,20 +37,6 @@ const ContactForm: React.FC = () => {
   });
   const [isFormSubmitting, setIsFormSubmitting] = useState(false);
 
-  const contact: Promise<any> = new Promise(async (resolve, reject) => {
-    const res = await emailjs.send(
-      process.env.NEXT_PUBLIC_EMAILJS_API_KEY || "",
-      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY || "",
-      { ...formData },
-      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
-    );
-    if (res.status === 200) {
-      resolve(res);
-    } else {
-      reject(res);
-    }
-  });
-
   const handleFormSubmit = async (e: any) => {
     e.preventDefault();
     if (formData.subject.length === 0 || formData.message.length === 0) {
@@ -58,6 +44,19 @@ const ContactForm: React.FC = () => {
       return;
     }
     setIsFormSubmitting(true);
+    const contact: Promise<any> = new Promise(async (resolve, reject) => {
+      const res = await emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_API_KEY || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY || "",
+        { ...formData },
+        process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+      );
+      if (res.status === 200) {
+        resolve(res);
+      } else {
+        reject(res);
+      }
+    });
     toast.promise(contact, {
       error: () => {
         setIsFormSubmitting(false);
