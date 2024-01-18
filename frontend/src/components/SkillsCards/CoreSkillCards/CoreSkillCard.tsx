@@ -1,7 +1,17 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { CoreSkillCardProps } from "../types";
+
+interface CoreSkillCardProps {
+  coreSkill: {
+    desc: string;
+    icon: string;
+    priority: number;
+    title: string;
+    _id: string;
+  };
+}
+
 const CoreSkillCard = ({ coreSkill }: CoreSkillCardProps) => {
   const { title, desc, icon } = coreSkill;
   const [bgWidth, setBgWidth] = useState("0px");
