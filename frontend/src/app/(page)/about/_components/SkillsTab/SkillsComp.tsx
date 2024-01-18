@@ -24,7 +24,15 @@ const SkillsComp = ({ skillTab }: SkillsCompProps) => {
             return (
               <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4  gap-2">
                 {skills?.tools?.map((skill) => {
-                  return <SkillCard key={skill._id} skill={skill} />;
+                  return (
+                    <SkillCard
+                      key={skill._id}
+                      skill={{
+                        ...skill,
+                        proficiency: Number(skill.proficiency),
+                      }}
+                    />
+                  );
                 })}
               </div>
             );
