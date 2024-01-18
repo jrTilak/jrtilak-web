@@ -23,28 +23,16 @@ export const navLinks: NavLinkTypes[] = [
     name: "Projects",
     href: "/projects",
     LinkIcon: GitCompareArrows,
-    tag: {
-      type: "text",
-      content: "9+",
-    },
   },
   // {
   //   name: "Blogs",
   //   href: "/blogs",
   //   LinkIcon: BsFillFileTextFill,
-  //   tag: {
-  //     type: "text",
-  //     content: "🔥",
-  //   },
   // },
   {
     name: "Journey",
     href: "/journey",
     LinkIcon: Route,
-    tag: {
-      type: "text",
-      content: "new",
-    },
   },
   // {
   //   name: "Services",
