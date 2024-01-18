@@ -12,7 +12,7 @@ const page = async () => {
         <Profile />
         <hr className="w-full h-[0.5px] mt-32 sm:mt-20 bg-gray-200 border-0 rounded dark:bg-gray-700" />
         <TabsComp activeTab="about" />
-        <AboutTab aboutMd={about?.aboutMd} />
+        <AboutTab />
       </div>
     </>
   );

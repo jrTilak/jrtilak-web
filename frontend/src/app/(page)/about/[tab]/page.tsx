@@ -27,7 +27,7 @@ const Page = async ({ params }: { params: { tab: string } }) => {
         {(() => {
           switch (activeTab) {
             case "about":
-              return <AboutTab aboutMd={ABOUT_JSON.aboutMd} />;
+              return <AboutTab  />;
             case "skills":
               return <SkillsTab activeTab="techs" />;
             case "education":
@@ -37,7 +37,7 @@ const Page = async ({ params }: { params: { tab: string } }) => {
             case "experience":
               return <ExperienceTab />;
             default:
-              return <AboutTab aboutMd={ABOUT_JSON.aboutMd} />;
+              return <AboutTab  />;
           }
         })()}
       </div>
