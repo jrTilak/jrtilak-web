@@ -74,81 +74,23 @@ export default function NavbarComp() {
           </div>
 
           {
-            //renders nav links in homepage only
-            pathName === "/" && (
-              <ul className="sm:inline-flex items-center space-x-1 md:space-x-3 gap-4 hidden">
-                {navLinks.map((link, index) => {
-                  if (index > 0 && index < 5) {
-                    return (
-                      <li key={index}>
-                        <Link
-                          href={link.href}
-                          className="inline-flex items-center text-lg font-medium opacity-60 hover:text-primary"
-                        >
-                          {link.name}
-                        </Link>
-                      </li>
-                    );
-                  }
-                })}
-              </ul>
-            )
-          }
-
-          {/*  path  */}
-          {pathName !== "/" && (
-            <ul className="sm:inline-flex items-center space-x-1 md:space-x-3 hidden">
-              {paths.map((path, index) => {
-                // renders a home icon and text home in all pages except homepage
-                if (index == 0 && pathName !== "/") {
+            <ul className="sm:inline-flex items-center space-x-1 md:space-x-3 gap-4 hidden">
+              {navLinks.map((link, index) => {
+                if (index > 0 && index < 5) {
                   return (
-                    <li key={index} className="inline-flex items-center">
+                    <li key={index}>
                       <Link
-                        href="/"
-                        className="inline-flex items-center text-sm opacity-60 font-medium hover:text-primary"
+                        href={link.href}
+                        className="inline-flex items-center text-lg font-medium opacity-60 hover:text-primary"
                       >
-                        <Home className="w-4 h-4 mr-2.5" />
-                        Home
+                        {link.name}
                       </Link>
                     </li>
-                  );
-                } else {
-                  let pathText = splitWordsIntoPaths(paths);
-                  return (
-                    path && (
-                      <li key={index}>
-                        <div className="flex items-center">
-                          <svg
-                            className="w-3 h-3 text-gray-400 mx-1"
-                            aria-hidden="true"
-                            xmlns="http://www.w3.org/2000/svg"
-                            fill="none"
-                            viewBox="0 0 6 10"
-                          >
-                            <path
-                              stroke="currentColor"
-                              strokeLinecap="round"
-                              strokeLinejoin="round"
-                              strokeWidth="2"
-                              d="m1 9 4-4-4-4"
-                            />
-                          </svg>
-                          <Link
-                            href={pathText[index]}
-                            className="ml-1 text-sm font-medium hover:text-primary "
-                          >
-                            {path.length <= 18
-                              ? path
-                              : path.slice(0, 15) + "..."}
-                          </Link>
-                        </div>
-                      </li>
-                    )
                   );
                 }
               })}
             </ul>
-          )}
+          }
 
           {/* right side buttons  */}
           <div className="flex items-center sm:mr-8">

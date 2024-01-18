@@ -9,7 +9,7 @@ export default function Profile() {
   return (
     <>
       {/* image  */}
-      <div className="flex justify-center relative items-center w-full md:w-[80vw] h-[200px] sm:h-[350px]">
+      <div className="flex justify-center relative items-center w-full md:w-[80vw] h-[150px] sm:h-[250px]">
         {/* cover image */}
         <div className="w-full h-full relative rounded-b-xl">
           <Image
