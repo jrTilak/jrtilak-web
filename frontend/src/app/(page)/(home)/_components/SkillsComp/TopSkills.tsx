@@ -1,6 +1,8 @@
 import SkillsListComp from "@/components/SkillsCards/SkillCards/SkillsListComp";
 import CoreSkillsListComp from "@/components/SkillsCards/CoreSkillCards/CoreSkillsListComp";
+import SKILLS_JSON from "@/assets/json/skills";
 const TopSkills = () => {
+  const skills = SKILLS_JSON.techs.filter((skill) => skill.isFeatured);
   return (
     <div className="">
       <div className="flex items-center justify-between mb-2 sm:mb-4 ">
@@ -9,7 +11,7 @@ const TopSkills = () => {
         </h1>
       </div>
       <div className="flex flex-col items-center justify-center gap-4 mx-auto md:flex-row">
-        <SkillsListComp />
+      <SkillsListComp skills={skills} />
         <div className="h-[300px] hidden md:block w-0.5 rounded-md self-stretch bg-gradient-to-tr from-transparent via-muted-foreground to-transparent opacity-20 dark:opacity-100" />
         <hr className="h-0.5 w-full md:hidden" />
         <CoreSkillsListComp />
