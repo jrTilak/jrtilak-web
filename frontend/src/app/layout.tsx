@@ -1,6 +1,7 @@
 import "@/app/styles/globals.css";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import type { Metadata } from "next";
+import { Toaster } from "react-hot-toast";
 
 export const metadata: Metadata = {
   title: "jrTilak | Full Stack Developer",
@@ -88,6 +89,7 @@ export default function RootLayout({
       >
         <body className="h-full w-full">
           {children}
+          <Toaster position="top-right" />
         </body>
       </ThemeProvider>
     </html>

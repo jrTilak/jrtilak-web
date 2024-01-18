@@ -13,37 +13,71 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "../ui/button";
-import generateId, { formatDateTime } from "@/utils/generateId";
 import { socialLinks } from "@/components/shared/SocialLinks";
 import { SendHorizontal } from "lucide-react";
+import toast from "react-hot-toast";
 
-const WEBSITE_URL = process.env.NEXT_PUBLIC_WEBSITE_URL;
+import emailjs from "@emailjs/browser";
+
+interface FormData {
+  name: string;
+  email: string;
+  subject: string;
+  message: string;
+  isReplyNecessary: boolean;
+}
 
 const ContactForm: React.FC = () => {
-  const [formData, setFormData] = useState({});
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+    isReplyNecessary: false,
+  });
   const [isFormSubmitting, setIsFormSubmitting] = useState(false);
-
-  useEffect(() => {
-    const formData = localStorage.getItem("formData");
-    if (typeof formData === "string" && formData.length > 0) {
-      try {
-        const formData = JSON.parse(localStorage.getItem("formData") || "");
-        setFormData(formData);
-      } catch (error) {
-        console.error("Local storage parse failed");
-        localStorage.removeItem("formData");
-      }
-    } else {
-      console.log("No local storage data found");
-    }
-  }, []);
 
   const handleFormSubmit = async (e: any) => {
     e.preventDefault();
+    if (formData.subject.length === 0 || formData.message.length === 0) {
+      toast.error("Please fill all the required fields.");
+      return;
+    }
+    setIsFormSubmitting(true);
+    toast.promise(
+      emailjs.send(
+        process.env.NEXT_PUBLIC_EMAILJS_API_KEY || "",
+        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY || ""
+      ),
+      {
+        error: () => {
+          setIsFormSubmitting(false);
+          return "Something went wrong. Please try again later.";
+        },
+        success: () => {
+          setIsFormSubmitting(false);
+          setFormData({
+            name: "",
+            email: "",
+            subject: "",
+            message: "",
+            isReplyNecessary: false,
+          });
+          return "Thank you for your message. I will get back to you as soon as possible.";
+        },
+        loading: "Sending message..., Please wait!",
+      }
+    );
   };
 
   const handleFormCancel = () => {
-    localStorage.removeItem("formData");
+    setFormData({
+      name: "",
+      email: "",
+      subject: "",
+      message: "",
+      isReplyNecessary: false,
+    });
   };
 
   const handleFormDataChange = (e: any) => {
@@ -97,7 +131,7 @@ const ContactForm: React.FC = () => {
               type="text"
               name="name"
               placeholder="Your Name"
-              // value={formData.name}
+              value={formData.name}
               onChange={(e) => handleFormDataChange(e)}
             />
             {/* <p className="text-red-500 text-xs italic">Please fill out this field.</p> */}
@@ -135,7 +169,7 @@ const ContactForm: React.FC = () => {
               id="subject"
               type="text"
               placeholder="..."
-              // value={formData.subject}
+              value={formData.subject}
               onChange={(e) => handleFormDataChange(e)}
             />
           </div>
@@ -153,7 +187,7 @@ const ContactForm: React.FC = () => {
               rows={10}
               id="message"
               name="message"
-              // value={formData.message}
+              value={formData.message}
               onChange={(e) => handleFormDataChange(e)}
               placeholder="Hello! I am writing this message ..."
               className="appearance-none block w-full bg-muted text-muted-foreground border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-primary"
@@ -175,7 +209,7 @@ const ContactForm: React.FC = () => {
                   type="checkbox"
                   id="isReplyNecessary"
                   name="isReplyNecessary"
-                  // checked={formData.isReplyNecessary}
+                  checked={formData.isReplyNecessary}
                 />
                 <span className="text-sm">I want your response ASAP !!</span>
               </label>
