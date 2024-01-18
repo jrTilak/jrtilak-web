@@ -10,9 +10,20 @@ import {
   TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
-import { ProjectDocType } from "@/types/projects/project.types";
 import { Suspense } from "react";
 import { ChevronsRight, Github, Info } from "lucide-react";
+
+interface ProjectDocType {
+  type: string;
+  img: string;
+  title: string;
+  liveDemo: string;
+  sourceCode: string;
+  desc: string;
+  techs: string[];
+  _id: string;
+}
+
 const ProjectCard = ({
   type,
   img,

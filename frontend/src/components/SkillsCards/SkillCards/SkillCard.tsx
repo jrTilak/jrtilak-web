@@ -1,9 +1,17 @@
 "use client";
 import Image from "next/image";
 import { useState } from "react";
-import { SkillCardProps } from "../types";
 import Link from "next/link";
 import { CODING_SVG } from "@/assets/constants/placeholders";
+
+interface SkillCardProps {
+  skill?: {
+    title: string;
+    icon: string;
+    level: string;
+    proficiency: number;
+  } | null;
+}
 
 const SkillCard = ({ skill }: SkillCardProps) => {
   const [skillCardBgWidth, setSkillCardBgWidth] = useState("0px");

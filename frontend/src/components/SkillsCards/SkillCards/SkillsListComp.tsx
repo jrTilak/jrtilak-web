@@ -1,12 +1,12 @@
+import SKILLS_JSON from "@/assets/json/skills";
 import SkillCard, { SkillCardWrapper } from "./SkillCard";
-import { SkillsListCompProps } from "../types";
 import { Suspense } from "react";
 
-const SkillsListComp = ({ skills }: SkillsListCompProps) => {
+const SkillsListComp = () => {
   return (
     <div className="flex ">
       <div className="grid grid-cols-2 gap-2">
-        {skills?.map((skill) => {
+        {SKILLS_JSON.techs?.map((skill) => {
           return (
             <Suspense key={skill._id}>
               <SkillCard skill={skill} />
