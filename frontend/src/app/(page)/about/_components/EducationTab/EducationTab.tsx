@@ -19,7 +19,7 @@ const EducationTab = () => {
                       <Flame className="text-red-500 h-5 w-5" />
                     )}
                     {education.status == "Completed" && (
-                      <Check className="bg-white border-emerald-500 border-2 text-emerald-500 h-5 w-5 rounded-full" />
+                      <Check className="text-foreground h-5 w-5 rounded-full" />
                     )}
                   </div>
                   <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-muted p-4 rounded border shadow">
