@@ -11,4 +11,5 @@ export const ICONS = {
   tailwind_css: "https://www.svgrepo.com/show/374118/tailwind.svg",
   vite_js: "https://www.svgrepo.com/show/374167/vite.svg",
   web_development: "https://www.svgrepo.com/show/261945/web-development.svg",
+  express_js: "https://www.svgrepo.com/show/330398/express.svg",
 };

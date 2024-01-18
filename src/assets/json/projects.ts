@@ -1,5 +1,20 @@
 const PROJECTS_JSON = [
   {
+    img: "https://github.com/jrTilak/bumbleBee/raw/master/frontend/src/images/hero-image.png",
+    sourceCode: "https://github.com/jrTilak/bumbleBee",
+    icon: "https://github.com/jrTilak/bumbleBee/raw/master/frontend/src/images/favicon.png",
+    techs: ["Express.js", "Mongodb", "Vite.js", "React.js", "Node.js"],
+    liveDemo: "https://bumblebee.thapatilak.com.np/",
+    priority: 4,
+    type: "Website",
+    title: "Bumblebee - AI Powered Chatbot",
+    tags: ["react app", "jrtilak", "javascript", "vite", "chatbot"],
+    desc: "Bumblebee is an AI powered chatbot that can help you with your queries. It is a web based application that can be accessed from anywhere. It is built using React.js, Express.js, MongoDB, and Vite.js. It uses OpenAI's GPT-3 API to generate responses to user queries.",
+    _id: "Bumblebee_-_AI_Powered_Chatbot_2023-12-07-07:26:15",
+    createdAt: "Jan 18, 2024",
+    isFeatured: true,
+  },
+  {
     img: "https://repository-images.githubusercontent.com/657066867/e4a5eeb3-de3e-4731-9db8-013a2e5c36af",
     sourceCode: "https://github.com/jrTilak/FSU",
     icon: "https://raw.githubusercontent.com/jrTilak/FSU/master/public/images/logo.png",
@@ -32,7 +47,6 @@ const PROJECTS_JSON = [
   {
     priority: 1,
     sourceCode: "https://github.com/jrTilak/C-Games",
-    isFeatured: true,
     img: "https://repository-images.githubusercontent.com/665353287/ed3b74aa-ff46-4e5c-b34f-a5709d4f2f7d",
     desc: "C Games is a collection of interactive games developed as the 1st-semester project for the C programming subject at the IOE, Purwanchal Campus, Dharan. The program aims to provide a fun and engaging experience for users, allowing them to play various games. It also includes features like user account creation, login, game history tracking, and high-score recording.",
     title: "C Games - 1st sem Project",
