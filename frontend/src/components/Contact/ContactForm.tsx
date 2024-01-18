@@ -37,6 +37,20 @@ const ContactForm: React.FC = () => {
   });
   const [isFormSubmitting, setIsFormSubmitting] = useState(false);
 
+  const contact: Promise<any> = new Promise(async (resolve, reject) => {
+    const res = await emailjs.send(
+      process.env.NEXT_PUBLIC_EMAILJS_API_KEY || "",
+      process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY || "",
+      { ...formData },
+      process.env.NEXT_PUBLIC_EMAILJS_PUBLIC_KEY || ""
+    );
+    if (res.status === 200) {
+      resolve(res);
+    } else {
+      reject(res);
+    }
+  });
+
   const handleFormSubmit = async (e: any) => {
     e.preventDefault();
     if (formData.subject.length === 0 || formData.message.length === 0) {
@@ -44,30 +58,24 @@ const ContactForm: React.FC = () => {
       return;
     }
     setIsFormSubmitting(true);
-    toast.promise(
-      emailjs.send(
-        process.env.NEXT_PUBLIC_EMAILJS_API_KEY || "",
-        process.env.NEXT_PUBLIC_EMAILJS_TEMPLATE_KEY || ""
-      ),
-      {
-        error: () => {
-          setIsFormSubmitting(false);
-          return "Something went wrong. Please try again later.";
-        },
-        success: () => {
-          setIsFormSubmitting(false);
-          setFormData({
-            name: "",
-            email: "",
-            subject: "",
-            message: "",
-            isReplyNecessary: false,
-          });
-          return "Thank you for your message. I will get back to you as soon as possible.";
-        },
-        loading: "Sending message..., Please wait!",
-      }
-    );
+    toast.promise(contact, {
+      error: () => {
+        setIsFormSubmitting(false);
+        return "Something went wrong. Please try again later.";
+      },
+      success: () => {
+        setIsFormSubmitting(false);
+        setFormData({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+          isReplyNecessary: false,
+        });
+        return "Thank you for your message. I will get back to you as soon as possible.";
+      },
+      loading: "Sending message..., Please wait!",
+    });
   };
 
   const handleFormCancel = () => {
