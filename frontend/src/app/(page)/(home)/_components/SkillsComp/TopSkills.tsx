@@ -3,7 +3,6 @@ import CoreSkillsListComp from "@/components/SkillsCards/CoreSkillCards/CoreSkil
 import SKILLS_JSON from "@/assets/json/skills";
 const TopSkills = () => {
   const coreSkills = SKILLS_JSON.core;
-  const topSkills = [...SKILLS_JSON.techs.filter((tech) => tech.isFeatured)];
   return (
     <div className="">
       <div className="flex items-center justify-between mb-2 sm:mb-4 ">
