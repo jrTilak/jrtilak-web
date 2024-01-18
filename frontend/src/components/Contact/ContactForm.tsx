@@ -12,7 +12,6 @@ import {
   AlertDialogTitle,
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
-import { useToast } from "@/components/ui/use-toast";
 import { Button } from "../ui/button";
 import generateId, { formatDateTime } from "@/utils/generateId";
 import { socialLinks } from "@/components/shared/SocialLinks";
@@ -26,7 +25,6 @@ import { SendHorizontal } from "lucide-react";
 const WEBSITE_URL = process.env.NEXT_PUBLIC_WEBSITE_URL;
 
 const ContactForm: React.FC = () => {
-  const { toast } = useToast();
   const [formData, setFormData] = useState(ContactFormInitialValues);
   const [isFormSubmitting, setIsFormSubmitting] = useState(false);
 
@@ -49,14 +47,14 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
     console.log(formData);
     const { isValid, validData, message } = isContactValid(formData);
-    if (!isValid) {
-      toast({
-        title: "Error",
-        description: message,
-        variant: "destructive",
-      });
-      return;
-    }
+    // if (!isValid) {
+    //   toast({
+    //     title: "Error",
+    //     description: message,
+    //     variant: "destructive",
+    //   });
+    //   return;
+    // }
     setIsFormSubmitting(true);
     const res = await fetch(`${WEBSITE_URL}/api/v1/contact`, {
       method: "POST",
@@ -67,20 +65,20 @@ const ContactForm: React.FC = () => {
       body: JSON.stringify(validData),
     });
     if (res.status === 200) {
-      toast({
-        title: "Success",
-        description: "Your message has been sent successfully.",
-        variant: "default",
-      });
+      // toast({
+      //   title: "Success",
+      //   description: "Your message has been sent successfully.",
+      //   variant: "default",
+      // });
       setIsFormSubmitting(false);
       localStorage.removeItem("formData");
       setFormData(ContactFormInitialValues);
     } else {
-      toast({
-        title: "Failed",
-        description: "Your message could not be sent. Please try again later",
-        variant: "destructive",
-      });
+      // toast({
+      //   title: "Failed",
+      //   description: "Your message could not be sent. Please try again later",
+      //   variant: "destructive",
+      // });
       setIsFormSubmitting(false);
     }
   };
