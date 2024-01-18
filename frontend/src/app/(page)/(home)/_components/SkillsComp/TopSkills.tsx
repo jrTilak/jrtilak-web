@@ -1,8 +1,6 @@
 import SkillsListComp from "@/components/SkillsCards/SkillCards/SkillsListComp";
 import CoreSkillsListComp from "@/components/SkillsCards/CoreSkillCards/CoreSkillsListComp";
-import SKILLS_JSON from "@/assets/json/skills";
 const TopSkills = () => {
-  const coreSkills = SKILLS_JSON.core;
   return (
     <div className="">
       <div className="flex items-center justify-between mb-2 sm:mb-4 ">
