@@ -1,6 +1,4 @@
-import { SkillType } from "@/types/skills/skills.types";
-
-export const assignLevels = (skills: SkillType[]) => {
+export const assignLevels = (skills: any[]) => {
   skills.forEach((skill) => {
     if (skill.proficiency <= 20) {
       skill.level = "Learner";
@@ -17,6 +15,6 @@ export const assignLevels = (skills: SkillType[]) => {
   return sortSkills(skills);
 };
 
-export const sortSkills = (skills: SkillType[]) => {
+export const sortSkills = (skills: any[]) => {
   return skills.sort((a, b) => b.priority - a.priority);
 };
