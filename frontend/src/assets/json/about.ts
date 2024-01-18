@@ -37,6 +37,13 @@ const ABOUT =
 
 const EDUCATION = [
   {
+    status: "Enrolled",
+    date: "04/2023",
+    title: "Bachelor in Computer Engineering",
+    desc: "Transitioning to the realm of higher education, I am currently pursuing a Bachelor's in Computer Engineering at IOE Purwanchal Campus in Dharan.",
+    _id: "Bachelor_in_Computer_Engineering_2023-11-04-13:53:42",
+  },
+  {
     title: "Higher Secondary (11-12)",
     date: "09/2022",
     status: "Completed",
@@ -49,13 +56,6 @@ const EDUCATION = [
     title: "Secondary Level (1-10)",
     status: "Completed",
     date: "08/2020",
-  },
-  {
-    status: "Enrolled",
-    date: "04/2023",
-    title: "Bachelor in Computer Engineering",
-    desc: "Transitioning to the realm of higher education, I am currently pursuing a Bachelor's in Computer Engineering at IOE Purwanchal Campus in Dharan.",
-    _id: "Bachelor_in_Computer_Engineering_2023-11-04-13:53:42",
   },
 ];
 

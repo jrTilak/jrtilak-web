@@ -22,6 +22,8 @@ const CertificationCard = ({
         <Image
           className="w-full h-full"
           src={certification?.img || placeholderImg}
+          placeholder="blur"
+          blurDataURL={certification?.img}
           alt=""
           height={300}
           width={300}

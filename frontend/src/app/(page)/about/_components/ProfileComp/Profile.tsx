@@ -14,6 +14,8 @@ export default function Profile() {
         <div className="w-full h-full relative rounded-b-xl">
           <Image
             src={about?.coverImg || coverPlaceholder}
+            placeholder="blur"
+            blurDataURL={about?.coverImg}
             fill
             className="rounded-b-xl object-cover"
             alt=""
@@ -24,6 +26,8 @@ export default function Profile() {
           <div className="border-background border-2 rounded-full w-32 h-32 sm:w-44 sm:h-44 absolute left-1/2 -translate-x-1/2 -bottom-20 sm:left-10 sm:translate-x-0  ">
             <Image
               src={about?.img || avatarPlaceholder}
+              placeholder="blur"
+              blurDataURL={about?.img}
               width={200}
               height={200}
               className="rounded-full"
