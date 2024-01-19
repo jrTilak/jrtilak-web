@@ -17,15 +17,15 @@ const CERTIFICATIONS = [
   },
 ];
 
-const  STATS = [
+const STATS = [
   {
-    count: PROJECTS_JSON.length,
+    count: PROJECTS_JSON.length.toString(),
     desc: "Completed 3+ projects.",
     type: "Projects",
     link: "/projects",
   },
   {
-    count: CERTIFICATIONS.length,
+    count: CERTIFICATIONS.length.toString(),
     desc: "2 certifications from hackathons, courses etc",
     type: "Certifications",
     link: "/about/certifications",
@@ -77,8 +77,6 @@ const EDUCATION = [
     date: "08/2020",
   },
 ];
-
-
 
 const ABOUT_JSON = {
   tagline: "React.js Developer | MERN | Next.js",
