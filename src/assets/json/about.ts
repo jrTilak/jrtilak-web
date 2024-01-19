@@ -87,7 +87,6 @@ const ABOUT_JSON = {
   img: "/jrtilak.jpg",
   nickname: "jrTilak",
   cvLink: "/jrtilak-cv.pdf",
-  cvImg: "/jrtilak-cv.jpg",
   titles: TITLES,
   stats: STATS,
   about: ABOUT,
