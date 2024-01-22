@@ -41,7 +41,7 @@ const ProjectCard = ({
           {type}
         </div>
         <Link
-          href={`${sourceCode}/README.md`}
+          href={liveDemo}
           className="group hover:scale-105 transition-all h-[226px] sm:h-[226px] overflow-hidden relative mx-2 sm:mx-4 mt-2 sm:mt-4 rounded-xl bg-clip-border shadow-lg shadow-blue-gray-500/40"
         >
           <Image
@@ -56,7 +56,7 @@ const ProjectCard = ({
         </Link>
         <div className=" p-4 sm:p-6 !pb-0">
           <div className="mb-2 sm:mb-3 flex items-center justify-between">
-            <Link href={`${liveDemo}/README.md`}>
+            <Link href={liveDemo}>
               <h1 className="block text-foreground text-xl font-bold leading-snug tracking-normal antialiased">
                 <UnderlineOnHover text={title} />
               </h1>
