@@ -23,7 +23,7 @@ const FeaturedProjects = () => {
       <div className="flex items-center w-[60%] m-auto">
         <span className="flex-grow bg-muted-foreground rounded h-0.5"></span>
         <Link href="/projects">
-          <Button variant="ghost">See more</Button>
+          <Button variant="secondary">See more</Button>
         </Link>
         <span className="flex-grow bg-muted-foreground rounded h-0.5"></span>
       </div>

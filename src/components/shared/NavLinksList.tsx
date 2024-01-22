@@ -1,5 +1,6 @@
 import {
   FileText,
+  Gem,
   GitCompareArrows,
   Home,
   Route,
@@ -29,16 +30,16 @@ export const navLinks: NavLinkTypes[] = [
   //   href: "/blogs",
   //   LinkIcon: BsFillFileTextFill,
   // },
-  {
-    name: "Journey",
-    href: "/journey",
-    LinkIcon: Route,
-  },
   // {
-  //   name: "Services",
-  //   href: "/services",
-  //   LinkIcon: FaLaptopCode,
+  //   name: "Journey",
+  //   href: "/journey",
+  //   LinkIcon: Route,
   // },
+  {
+    name: "Services",
+    href: "/services",
+    LinkIcon: Gem,
+  },
   {
     name: "Resume",
     href: "/cv",

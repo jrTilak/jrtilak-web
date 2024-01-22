@@ -22,8 +22,6 @@ const TechCircleCard = ({ icon, count, title }: TechCircleCardProps) => {
                   className="h-5 w-5 sm:h-7 sm:w-7  group-hover:opacity-100"
                   src={icon}
                   style={{ opacity: 0.7 }}
-                  placeholder="blur"
-                  blurDataURL={icon}
                   alt=""
                   height={7}
                   width={7}

@@ -21,17 +21,17 @@ export default function NavbarComp() {
   const isScrolled = useScrollTop();
   const pathName = usePathname();
 
-  useEffect(() => {
-    if (isScrolled) {
-      document
-        .getElementById("top-nav")
-        ?.classList.add("shadow-md", "shadow-muted");
-    } else {
-      document
-        .getElementById("top-nav")
-        ?.classList.remove("shadow-md", "shadow-muted");
-    }
-  }, [isScrolled]);
+  // useEffect(() => {
+  //   if (isScrolled) {
+  //     document
+  //       .getElementById("top-nav")
+  //       ?.classList.add("shadow-md", "shadow-muted");
+  //   } else {
+  //     document
+  //       .getElementById("top-nav")
+  //       ?.classList.remove("shadow-md", "shadow-muted");
+  //   }
+  // }, [isScrolled]);
 
   //returning
   return (
@@ -49,7 +49,7 @@ export default function NavbarComp() {
         <div
           id="top-nav"
           className={cn(
-            "flex items-center justify-between sm:px-6 py-3 lg:px-16 lg:pl-3"
+            "flex items-center justify-between sm:px-6 py-3 lg:px-16 md:py-6 xl:px-32 shadow-md shadow-muted transition-all",
           )}
         >
           <div className="flex items-center justify-start">
@@ -60,7 +60,7 @@ export default function NavbarComp() {
               }}
               variant="none"
               type="button"
-              className="navToggleButton inline-flex items-center text-lg rounded-lg transition-all"
+              className="navToggleButton md:hidden inline-flex items-center text-lg rounded-lg transition-all"
             >
               <span className="sr-only">Open sidebar</span>
               <Menu className="w-9 h-9 navToggleButton" />
@@ -73,26 +73,27 @@ export default function NavbarComp() {
           </div>
 
           {
-            <ul className="sm:inline-flex items-center space-x-1 md:space-x-3 gap-4 hidden">
+            <ul className="md:inline-flex items-center space-x-1 md:space-x-3 gap-4 hidden">
               {navLinks.map((link, index) => {
-                if (index > 0 && index < 5) {
-                  return (
-                    <li key={index}>
-                      <Link
-                        href={link.href}
-                        className="inline-flex items-center text-lg font-medium opacity-60 hover:text-primary"
-                      >
-                        {link.name}
-                      </Link>
-                    </li>
-                  );
-                }
+                return (
+                  <li key={index}>
+                    <Link
+                      href={link.href}
+                      className={cn(
+                        "inline-flex items-center text-lg font-medium opacity-60 hover:text-primary",
+                        pathName === link.href && "text-primary opacity-100"
+                      )}
+                    >
+                      {link.name}
+                    </Link>
+                  </li>
+                );
               })}
             </ul>
           }
 
           {/* right side buttons  */}
-          <div className="flex items-center sm:mr-8">
+          <div className="flex items-center ">
             <div className="flex items-center ml-3 gap-2 w-24 justify-evenly">
               <div className="flex gap-2">
                 {socialIcons.map((link, index) => {

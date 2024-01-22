@@ -81,19 +81,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <ThemeProvider
+      {/* <ThemeProvider
         attribute="class"
         defaultTheme="light"
         enableSystem
         disableTransitionOnChange
         storageKey="theme"
-      >
+      > */}
         <body className="h-full w-full">
           {children}
           <Toaster position="top-right" />
           <Scrollbar />
         </body>
-      </ThemeProvider>
+      {/* </ThemeProvider> */}
     </html>
   );
 }
