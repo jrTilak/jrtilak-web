@@ -18,7 +18,7 @@ const PROJECTS_JSON = [
     img: "https://repository-images.githubusercontent.com/657066867/e4a5eeb3-de3e-4731-9db8-013a2e5c36af",
     sourceCode: "https://github.com/jrTilak/FSU",
     icon: "https://raw.githubusercontent.com/jrTilak/FSU/master/public/images/logo.png",
-    techs: ["React.js", "Javascript", "CSS", "HTML"],
+    techs: ["Next.js", "Javascript", "CSS", "HTML"],
     liveDemo: "https://fsu.thapatilak.com.np/",
     priority: 3,
     type: "Website",
