@@ -20,7 +20,6 @@ export default function NavbarComp() {
   const [isNavOpen, setIsNavOpen] = useState(false);
   const isScrolled = useScrollTop();
   const pathName = usePathname();
-  let paths = pathName.split("/");
 
   useEffect(() => {
     if (isScrolled) {
@@ -107,10 +106,10 @@ export default function NavbarComp() {
                   }
                 })}
               </div>
-              <GitCommitVertical className="h-6 min-w-[1px] bg-purple-900 ml-2 sm:ml-4 sm:mr-2 opacity-50" />
+              {/* <GitCommitVertical className="h-6 min-w-[1px] bg-purple-900 ml-2 sm:ml-4 sm:mr-2 opacity-50" />
               <div className="mr-4">
                 <ToggleMode />
-              </div>
+              </div> */}
             </div>
           </div>
         </div>
