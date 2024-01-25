@@ -1,3 +1,4 @@
+import OSC from "./osc";
 import PROJECTS_JSON from "./projects";
 
 const CERTIFICATIONS = [
@@ -20,7 +21,7 @@ const CERTIFICATIONS = [
 const STATS = [
   {
     count: PROJECTS_JSON.length.toString(),
-    desc: "Completed 3+ projects.",
+    desc: `Completed ${PROJECTS_JSON.length.toString()} projects.`,
     type: "Projects",
     link: "/projects",
   },
@@ -31,14 +32,16 @@ const STATS = [
     link: "/about/certifications",
   },
   {
-    count: "1",
-    desc: "1 open source contributions till now",
+    count: OSC.length.toString(),
+    desc: `${OSC.length.toString()} open source contributions till now`,
     type: "OS Contributions",
     link: "/osc",
   },
   {
-    count: "1.1 yrs",
-    desc: "I have 1.1 yrs+ years of experience.",
+    count: `${new Date().getTime() - new Date("2022-10-01").getTime()} yrs`,
+    desc: `I have ${
+      new Date().getTime() - new Date("2022-10-01").getTime()
+    } yrs+ years of experience.`,
     type: "Experience",
     link: "/about/experience",
   },
