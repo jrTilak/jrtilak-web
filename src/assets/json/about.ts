@@ -27,7 +27,7 @@ const STATS = [
   },
   {
     count: CERTIFICATIONS.length.toString(),
-    desc: "2 certifications from hackathons, courses etc",
+    desc: `${CERTIFICATIONS.length.toString()} certifications from hackathons, courses etc`,
     type: "Certifications",
     link: "/about/certifications",
   },
