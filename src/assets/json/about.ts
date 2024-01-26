@@ -22,7 +22,7 @@ const experienceInMilliseconds =
   new Date().getTime() - new Date("2022-10-01").getTime();
 const experienceInYears =
   experienceInMilliseconds / (1000 * 60 * 60 * 24 * 365);
-const formattedExperience = experienceInYears.toFixed(2);
+const formattedExperience = experienceInYears.toFixed(1);
 
 const STATS = [
   {
