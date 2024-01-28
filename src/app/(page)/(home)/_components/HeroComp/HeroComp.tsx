@@ -26,15 +26,15 @@ const HeroComp = () => {
                 <Download className="ml-2 h-4 w-4" />
               </Button>
             </Link>
-            <Button variant="ghost" className="xs:w-auto">
-              <Link
-                href="/contact"
-                className="inline-flex items-center justify-center text-center "
-              >
+            <Link
+              href="/contact"
+              className="inline-flex items-center justify-center text-center "
+            >
+              <Button variant="ghost" className="xs:w-auto">
                 Let&apos;s Talk
                 <ArrowRight className="ml-2 h-4 w-4" />
-              </Link>
-            </Button>
+              </Button>
+            </Link>
           </div>
         </div>
         <HeroImg img={img} />
