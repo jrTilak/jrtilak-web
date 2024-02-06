@@ -22,7 +22,7 @@ const HeroComp = () => {
           <div className="flex flex-col gap-2 xs:flex-row sm:gap-4">
             <Link href={cvLink} download target="_blank">
               <Button variant="purple" className="w-full xs:w-auto">
-                <span>Download DV</span>
+                <span>Download CV</span>
                 <Download className="ml-2 h-4 w-4" />
               </Button>
             </Link>
