@@ -12,7 +12,7 @@ const Page = () => {
         className="md:fixed top-20 right-4 mt-4"
       >
         <Button variant="purple" className="w-full xs:w-auto">
-          <span>Download DV</span>
+          <span>Download CV</span>
           <Download className="ml-2 h-4 w-4" />
         </Button>
       </Link>
