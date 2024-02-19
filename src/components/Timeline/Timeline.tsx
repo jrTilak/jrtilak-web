@@ -1,13 +1,15 @@
+import ABOUT_JSON from "@/assets/json/about";
 import { Check, Flame } from "lucide-react";
+import Link from "next/link";
 
-type Props = {
-  _id: string;
-  title: string;
-  desc: string;
-  date: string;
-  status: string;
-};
-const Timeline = ({ _id, title, desc, date, status }: Props) => {
+const Timeline = ({
+  _id,
+  title,
+  desc,
+  date,
+  status,
+  link,
+}: (typeof ABOUT_JSON.education)[number]) => {
   return (
     <>
       <div
@@ -22,7 +24,7 @@ const Timeline = ({ _id, title, desc, date, status }: Props) => {
             <Check className="text-foreground h-5 w-5 rounded-full" />
           )}
         </div>
-        <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-muted p-4 rounded border shadow">
+        <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-muted p-4 rounded border shadow transition-all">
           <div className="flex items-center justify-between space-x-2 mb-1">
             <div className="font-light text-muted-foreground">{status}</div>
             {(status == "Enrolled" || status == "Ongoing") && (
@@ -37,7 +39,17 @@ const Timeline = ({ _id, title, desc, date, status }: Props) => {
             )}
           </div>
           <div>
-            <h3 className="text-foreground font-semibold">{title}</h3>
+            {link ? (
+              <Link
+                href={link}
+                target="_blank"
+                className="text-foreground font-semibold hover:underline hover:text-primary transition-all"
+              >
+                {title}
+              </Link>
+            ) : (
+              <h3 className="text-foreground font-semibold">{title}</h3>
+            )}
             <p className="text-muted-foreground">{desc}</p>
           </div>
         </div>

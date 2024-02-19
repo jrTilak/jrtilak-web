@@ -8,10 +8,19 @@ const EXPERIENCE = [
   },
   {
     status: "Ongoing",
-    date: "01/2024",
+    date: "02/2024 - Present",
+    title: "React Developer Internship",
+    desc: "I am currently working on a company called Neon Shark as a React Developer Intern.",
+    _id: "React_Developer_Internship_2024-02-01-00:00:00",
+    link: "https://neonshark.co.in/",
+  },
+  {
+    status: "Completed",
+    date: "01/2024 - 02/2024",
     title: "Web Dev Internship",
-    desc: "I am currently working as a Web Dev Intern at a company called Prodigy InfoTech.",
+    desc: "I worked on a company called Prodigy Infotech as a Web Developer Intern for 1 month.",
     _id: "Web_Dev_Internship_2024-01-01-00:00:00",
+    link: "https://prodigyinfotech.dev/",
   },
 ];
 

@@ -86,6 +86,7 @@ const EDUCATION = [
     title: "Bachelor in Computer Engineering",
     desc: "Transitioning to the realm of higher education, I am currently pursuing a Bachelor's in Computer Engineering at IOE Purwanchal Campus in Dharan.",
     _id: "Bachelor_in_Computer_Engineering_2023-11-04-13:53:42",
+    link: "https://ioepc.edu.np/",
   },
   {
     title: "Higher Secondary (11-12)",
