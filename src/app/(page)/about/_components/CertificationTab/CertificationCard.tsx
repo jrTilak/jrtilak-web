@@ -1,14 +1,13 @@
-import Image from "next/image";
 import Link from "next/link";
 import React from "react";
-import placeholderImg from "@/assets/img/projectPlaceholder.jpg";
+import CertificationImage from "./CertificationImage";
 
 interface CertificationCardProps {
   href: string;
   title: string;
   type: string;
   _id: string;
-  img: string;
+  img: any;
 }
 
 const CertificationCard = ({
@@ -18,18 +17,11 @@ const CertificationCard = ({
 }) => {
   return (
     <div className="rounded overflow-hidden shadow-lg flex flex-col md:hover:scale-105 transition-all">
-      <Link href={certification?.href || ""} target="_blank" className="">
-        <Image
-          className="w-full h-full"
-          src={certification?.img || placeholderImg}
-          placeholder="blur"
-          blurDataURL={certification?.img}
-          alt=""
-          height={300}
-          width={300}
-          quality={100}
-        />
-      </Link>
+      <CertificationImage
+        img={certification?.img}
+        title={certification?.title}
+        id={certification?._id}
+      />
       <div className="px-6 py-4 mb-auto">
         <div className="mb-3">
           <span className="text-xs text-primary transition duration-500 ease-in-out">
@@ -38,6 +30,7 @@ const CertificationCard = ({
         </div>
         <Link
           href={certification?.href || ""}
+          target="_blank"
           className="font-medium text-base inline-block hover:text-primary transition duration-500 ease-in-out  mb-2 cursor-pointer"
         >
           {certification?.title}

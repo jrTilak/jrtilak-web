@@ -1,10 +1,28 @@
 import OSC from "./osc";
 import PROJECTS_JSON from "./projects";
+import bootcamp from "@/assets/certifications-img/The Complete 2023 Web Development Bootcamp.jpg";
+import fsu from "@/assets/certifications-img/FSU Webdev.jpg";
+import lor from "@/assets/certifications-img/Letter of Recommendatin.jpg";
+import internshipImg from "@/assets/certifications-img/Certificate_internship.jpg";
 
 const CERTIFICATIONS = [
   {
+    _id: "Web_Development_Internship_at_Prodigy_InfoTech_2023-11-04-11:10:07",
+    img: internshipImg,
+    href: "https://prodigyinfotech.dev/",
+    type: "Internship Certificate",
+    title: "Web Development Internship at Prodigy InfoTech",
+  },
+  {
+    _id: "Letter_of_Recommendation_from_Prodigy_InfoTech_2023-11-04-11:10:07",
+    img: lor,
+    href: "https://prodigyinfotech.dev/",
+    type: "Letter of Recommendation",
+    title: "Letter of Recommendation from Prodigy InfoTech",
+  },
+  {
     _id: "The_Complete_2023_Web_Development_Bootcamp_2023-11-04-11:10:07",
-    img: "https://firebasestorage.googleapis.com/v0/b/jr-tilak.appspot.com/o/certificates%2FThe%20Complete%202023%20Web%20Development%20Bootcamp.jpg?alt=media&token=859a1be1-de2c-4edb-97a1-ecaac71ad15b&_gl=1*2v3wni*_ga*MTU1NzY2NDMwNC4xNjk3ODg0NTk1*_ga_CW55HF8NVT*MTY5ODMxNjg4NS42LjEuMTY5ODMxNzg1MC45LjAuMA..",
+    img: bootcamp,
     href: "https://www.udemy.com/certificate/UC-82d64509-0c71-4480-b6a2-f51ec8a3dc1a/",
     type: "Web Development",
     title: "The Complete 2023 Web Development Bootcamp",
@@ -14,7 +32,7 @@ const CERTIFICATIONS = [
     title: "FSU WebDev Competition",
     type: "WebDev Competition",
     _id: "FSU_WebDev_Competition_2023-11-18-18:14:43",
-    img: "https://raw.githubusercontent.com/jrTilak/FSU/master/public/certificates/photo_2023-07-12_17-29-28.jpg",
+    img: fsu,
   },
 ];
 
