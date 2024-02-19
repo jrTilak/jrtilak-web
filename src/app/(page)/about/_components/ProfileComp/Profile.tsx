@@ -1,9 +1,9 @@
 import Image from "next/image";
 import coverPlaceholder from "@/assets/img/cover.jpg";
 import avatarPlaceholder from "@/assets/img/avatarPlaceholder.jpg";
-import { socialLinks } from "@/components/shared/SocialLinks";
 import SocialIcon from "./SocialIcon";
 import ABOUT_JSON from "@/assets/json/about";
+import SOCIAL_LINKS from "@/assets/json/sockialLinks";
 export default function Profile() {
   const about = { ...ABOUT_JSON };
   return (
@@ -43,7 +43,7 @@ export default function Profile() {
           </div>
         </div>
         <div className="absolute right-5 -bottom-5 flex flex-col md:flex-row gap-2">
-          {socialLinks.map((link, index) => (
+          {SOCIAL_LINKS.map((link, index) => (
             <SocialIcon key={index} href={link.href} icon={link.icon} />
           ))}
         </div>

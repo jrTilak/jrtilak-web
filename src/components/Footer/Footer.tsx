@@ -1,3 +1,4 @@
+import FOOTER_DATA from "@/assets/json/footer";
 import Link from "next/link";
 
 const Footer = () => {
@@ -10,11 +11,11 @@ const Footer = () => {
             <p className="">
               <span>© {new Date().getFullYear()} </span>
               <Link
-                href="https://www.instagram.com/iamjrtilak/"
+                href={FOOTER_DATA.link}
                 target="_blank"
                 className=" text-sm font-medium hover:text-primary"
               >
-                jrTilak
+                {FOOTER_DATA.name}
               </Link>
               <span>. All rights reserved.</span>
             </p>
