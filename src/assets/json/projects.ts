@@ -1,10 +1,14 @@
 import travellianImg from "@/assets/project-img/travellian.png";
+import bumblebeeIMg from "@/assets/project-img/bumblebee.png";
+import stringifyImg from "@/assets/project-img/stringify.png";
+import fsuImg from "@/assets/project-img/fsu.jpg";
+import cGamesImg from "@/assets/project-img/c.png";
 
 const PROJECTS_JSON = [
   {
-    img: "https://github.com/jrTilak/bumbleBee/raw/master/frontend/src/images/hero-image.png",
+    img: bumblebeeIMg,
     sourceCode: "https://github.com/jrTilak/bumbleBee",
-    techs: ["Express.js", "Mongodb", "Vite.js", "React.js", "Node.js"],
+    techs: ["Express.js", "Mongodb", "Vite.js", "React.js", "Tailwind CSS"],
     liveDemo: "https://bumblebee.thapatilak.com.np/",
     type: "Website",
     title: "Bumblebee - AI Powered Chatbot",
@@ -28,9 +32,9 @@ const PROJECTS_JSON = [
     isFeatured: true,
   },
   {
-    img: "https://repository-images.githubusercontent.com/657066867/e4a5eeb3-de3e-4731-9db8-013a2e5c36af",
+    img: fsuImg,
     sourceCode: "https://github.com/jrTilak/FSU",
-    techs: ["Next.js", "Javascript", "CSS", "HTML"],
+    techs: ["Next.js", "Javascript", "Tailwind CSS"],
     liveDemo: "https://fsu.thapatilak.com.np/",
     type: "Website",
     title: "FSU - WebDev Competition",
@@ -44,9 +48,8 @@ const PROJECTS_JSON = [
     type: "Website",
     techs: ["Vite.js", "React.js", "Node.js", "CSS", "HTML"],
     liveDemo: "https://stringify.thapatilak.com.np/",
-    img: "https://repository-images.githubusercontent.com/652996745/de305753-89f8-42bb-87c1-9d6c06f19f70",
+    img: stringifyImg,
     desc: "Stringify is a user-friendly web app that simplifies text manipulation. With its intuitive interface, you can effortlessly perform tasks like case conversions, find and replace, URL encoding, and much more.",
-    isFeatured: true,
     tags: ["react app", "jrtilak", "javascript", "vite", "text tools"],
     sourceCode: "https://github.com/jrTilak/Stringify",
     title: "Stringify - Effortless Text Manipulation",
@@ -55,7 +58,7 @@ const PROJECTS_JSON = [
   },
   {
     sourceCode: "https://github.com/jrTilak/C-Games",
-    img: "https://repository-images.githubusercontent.com/665353287/ed3b74aa-ff46-4e5c-b34f-a5709d4f2f7d",
+    img: cGamesImg,
     desc: "C Games is a collection of interactive games developed as the 1st-semester project for the C programming subject at the IOE, Purwanchal Campus, Dharan. The program aims to provide a fun and engaging experience for users, allowing them to play various games. It also includes features like user account creation, login, game history tracking, and high-score recording.",
     title: "C Games - 1st sem Project",
     tags: ["c-language", "c projects", "jrtilak"],

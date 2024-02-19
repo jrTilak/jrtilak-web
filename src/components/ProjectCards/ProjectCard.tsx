@@ -48,7 +48,6 @@ const ProjectCard = ({
             className="transition-all h-full w-full object-cover object-center"
             src={img || projectPlaceholderImg}
             placeholder="blur"
-            blurDataURL={img}
             alt=""
             height={500}
             width={500}
