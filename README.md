@@ -1,5 +1,7 @@
 # Minimalist Portfolio
 
+<img src="/public/demo.png"/>
+
 #### Emailjs Template
 
 Go to [Emailjs](https://www.emailjs.com/) and create a new template. You can use the following code as a starting point.
