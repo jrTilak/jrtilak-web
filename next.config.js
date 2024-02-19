@@ -10,6 +10,7 @@ const nextConfig = {
       "lh3.googleusercontent.com",
       "udemy-certificate.s3.amazonaws.com",
       "github.com",
+      "docs.pmnd.rs",
     ],
   },
 };

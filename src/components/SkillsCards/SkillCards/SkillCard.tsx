@@ -3,14 +3,13 @@ import Image from "next/image";
 import { useState } from "react";
 import Link from "next/link";
 import { CODING_SVG } from "@/assets/constants/placeholders";
+import SKILLS_JSON from "@/assets/json/skills";
 
 interface SkillCardProps {
-  skill?: {
-    title: string;
-    icon: string;
-    level: string;
-    proficiency: number;
-  } | null;
+  skill?:
+    | (typeof SKILLS_JSON.techs)[number]
+    | (typeof SKILLS_JSON.tools)[number]
+    | null;
 }
 
 const SkillCard = ({ skill }: SkillCardProps) => {
@@ -59,14 +58,11 @@ export default SkillCard;
 
 export const SkillCardWrapper = ({ skill }: SkillCardProps) => {
   return (
-    <>
-      {!skill ? (
-        <Link href="/about/skills">
-          <SkillCard skill={skill} />
-        </Link>
-      ) : (
-        <SkillCard skill={skill} />
-      )}
-    </>
+    <Link
+      href={skill ? skill.link : "/about/skills"}
+      target={skill ? "_blank" : "_self"}
+    >
+      <SkillCard skill={skill} />
+    </Link>
   );
 };

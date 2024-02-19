@@ -1,6 +1,6 @@
 import SKILLS_JSON from "@/assets/json/skills";
 import CoreSkillCard from "@/components/SkillsCards/CoreSkillCards/CoreSkillCard";
-import SkillCard from "@/components/SkillsCards/SkillCards/SkillCard";
+import SkillCard, { SkillCardWrapper } from "@/components/SkillsCards/SkillCards/SkillCard";
 
 interface SkillsCompProps {
   skillTab: string;
@@ -25,7 +25,7 @@ const SkillsComp = ({ skillTab }: SkillsCompProps) => {
               <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4  gap-2">
                 {skills?.tools?.map((skill) => {
                   return (
-                    <SkillCard
+                    <SkillCardWrapper
                       key={skill._id}
                       skill={{
                         ...skill,
@@ -40,7 +40,7 @@ const SkillsComp = ({ skillTab }: SkillsCompProps) => {
             return (
               <div className="grid grid-cols-1 xs:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4  gap-2">
                 {skills?.techs?.map((skill) => {
-                  return <SkillCard key={skill._id} skill={skill} />;
+                  return <SkillCardWrapper key={skill._id} skill={skill} />;
                 })}
               </div>
             );

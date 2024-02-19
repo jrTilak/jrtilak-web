@@ -6,7 +6,6 @@ interface CoreSkillCardProps {
   coreSkill: {
     desc: string;
     icon: string;
-    priority: number;
     title: string;
     _id: string;
   };
