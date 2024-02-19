@@ -1,3 +1,4 @@
+import { NavLinkTypes } from "@/components/Navbar/types";
 import {
   FileText,
   Gem,
@@ -7,9 +8,8 @@ import {
   SendHorizontal,
   UserRound,
 } from "lucide-react";
-import { NavLinkTypes } from "../Navbar/types";
 
-export const navLinks: NavLinkTypes[] = [
+ const NAV_LINKS: NavLinkTypes[] = [
   {
     name: "Home",
     href: "/",
@@ -35,11 +35,11 @@ export const navLinks: NavLinkTypes[] = [
   //   href: "/journey",
   //   LinkIcon: Route,
   // },
-  {
-    name: "Services",
-    href: "/services",
-    LinkIcon: Gem,
-  },
+//   {
+//     name: "Services",
+//     href: "/services",
+//     LinkIcon: Gem,
+//   },
   {
     name: "Resume",
     href: "/cv",
@@ -51,3 +51,5 @@ export const navLinks: NavLinkTypes[] = [
     LinkIcon: SendHorizontal,
   },
 ];
+
+export default NAV_LINKS;

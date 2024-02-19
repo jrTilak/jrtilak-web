@@ -13,18 +13,17 @@ import {
   AlertDialogTrigger,
 } from "@/components/ui/alert-dialog";
 import { Button } from "../ui/button";
-import { socialLinks } from "@/components/shared/SocialLinks";
 import { SendHorizontal } from "lucide-react";
 import toast from "react-hot-toast";
 
 import emailjs from "@emailjs/browser";
+import SOCIAL_LINKS from "@/assets/json/sockialLinks";
 
 interface FormData {
   name: string;
   email: string;
   subject: string;
   message: string;
-  isReplyNecessary: boolean;
 }
 
 const ContactForm: React.FC = () => {
@@ -33,7 +32,6 @@ const ContactForm: React.FC = () => {
     email: "",
     subject: "",
     message: "",
-    isReplyNecessary: false,
   });
   const [isFormSubmitting, setIsFormSubmitting] = useState(false);
 
@@ -69,7 +67,6 @@ const ContactForm: React.FC = () => {
           email: "",
           subject: "",
           message: "",
-          isReplyNecessary: false,
         });
         return "Thank you for your message. I will get back to you as soon as possible.";
       },
@@ -83,7 +80,6 @@ const ContactForm: React.FC = () => {
       email: "",
       subject: "",
       message: "",
-      isReplyNecessary: false,
     });
   };
 
@@ -107,7 +103,7 @@ const ContactForm: React.FC = () => {
         </p>
 
         <div className="flex flex-col gap-4 mt-4">
-          {socialLinks.map((link) => {
+          {SOCIAL_LINKS.map((link) => {
             return (
               <SocialLink
                 href={link.href}
@@ -200,58 +196,36 @@ const ContactForm: React.FC = () => {
               className="appearance-none block w-full bg-muted text-muted-foreground border  rounded py-3 px-4 mb-3 leading-tight focus:outline-none focus:border-primary"
             ></textarea>
           </div>
-          <div className="flex sm:justify-between w-full px-3 flex-col gap-2 sm:flex-row">
-            <div className="md:flex md:items-center sm:self-start cursor-pointer">
-              <label className=" text-muted-foreground font-bold flex items-center justify-center">
-                <input
-                  onChange={(e) => {
-                    setFormData((prev: any) => {
-                      return {
-                        ...prev,
-                        isReplyNecessary: !prev.isReplyNecessary,
-                      };
-                    });
-                  }}
-                  className="mr-2 leading-tight"
-                  type="checkbox"
-                  id="isReplyNecessary"
-                  name="isReplyNecessary"
-                  checked={formData.isReplyNecessary}
-                />
-                <span className="text-sm">I want your response ASAP !!</span>
-              </label>
-            </div>
-            <div className="flex items-center justify-center gap-4 sm:self-end">
-              <AlertDialog>
-                <AlertDialogTrigger>
-                  <Button role="button" type="button" variant="outline">
-                    Cancel
-                  </Button>
-                </AlertDialogTrigger>
-                <AlertDialogContent>
-                  <AlertDialogHeader>
-                    <AlertDialogTitle>Are you sure?</AlertDialogTitle>
-                    <AlertDialogDescription>
-                      This will reset the form data.
-                    </AlertDialogDescription>
-                  </AlertDialogHeader>
-                  <AlertDialogFooter>
-                    <AlertDialogCancel>Cancel</AlertDialogCancel>
-                    <AlertDialogAction onClick={handleFormCancel}>
-                      Continue
-                    </AlertDialogAction>
-                  </AlertDialogFooter>
-                </AlertDialogContent>
-              </AlertDialog>
-              <Button
-                variant="purple"
-                onClick={(e) => handleFormSubmit(e)}
-                type="submit"
-              >
-                {isFormSubmitting ? "Sending..." : "Send"}
-                <SendHorizontal className="ml-2 w-4 h-4" />
-              </Button>
-            </div>
+          <div className="flex items-center justify-center sm:justify-end gap-4 sm:self-end w-full">
+            <AlertDialog>
+              <AlertDialogTrigger>
+                <Button role="button" type="button" variant="outline">
+                  Cancel
+                </Button>
+              </AlertDialogTrigger>
+              <AlertDialogContent>
+                <AlertDialogHeader>
+                  <AlertDialogTitle>Are you sure?</AlertDialogTitle>
+                  <AlertDialogDescription>
+                    This will reset the form data.
+                  </AlertDialogDescription>
+                </AlertDialogHeader>
+                <AlertDialogFooter>
+                  <AlertDialogCancel>Cancel</AlertDialogCancel>
+                  <AlertDialogAction onClick={handleFormCancel}>
+                    Continue
+                  </AlertDialogAction>
+                </AlertDialogFooter>
+              </AlertDialogContent>
+            </AlertDialog>
+            <Button
+              variant="purple"
+              onClick={(e) => handleFormSubmit(e)}
+              type="submit"
+            >
+              {isFormSubmitting ? "Sending..." : "Send"}
+              <SendHorizontal className="ml-2 w-4 h-4" />
+            </Button>
           </div>
         </div>
       </form>

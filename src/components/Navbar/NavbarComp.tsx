@@ -4,36 +4,19 @@
 import Link from "next/link";
 import React, { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
-import ToggleMode from "@/components/Buttons/ToggleMode";
-import { navLinks } from "../shared/NavLinksList";
-import { socialIcons } from "../shared/SocialIconsList";
-import splitWordsIntoPaths from "@/utils/splitWordsIntoPaths";
 import { cn } from "@/lib/utils";
 import NavLi from "./NavLinkItem";
 import SocialIcon from "./SocialIcon";
 import { Button } from "../ui/button";
-import useScrollTop from "@/hooks/use-scroll-top";
-import { GitCommitVertical, Home, Menu, X } from "lucide-react";
+import { Menu, X } from "lucide-react";
+import NAV_LINKS from "@/assets/json/navLinks";
+import SOCIAL_LINKS from "@/assets/json/sockialLinks";
 
 // main function
 export default function NavbarComp() {
   const [isNavOpen, setIsNavOpen] = useState(false);
-  const isScrolled = useScrollTop();
   const pathName = usePathname();
 
-  // useEffect(() => {
-  //   if (isScrolled) {
-  //     document
-  //       .getElementById("top-nav")
-  //       ?.classList.add("shadow-md", "shadow-muted");
-  //   } else {
-  //     document
-  //       .getElementById("top-nav")
-  //       ?.classList.remove("shadow-md", "shadow-muted");
-  //   }
-  // }, [isScrolled]);
-
-  //returning
   return (
     <>
       <nav className="fixed top-0 z-50 w-full min-h-[60px]  backdrop-blur-sm bg-background/90 ">
@@ -49,7 +32,7 @@ export default function NavbarComp() {
         <div
           id="top-nav"
           className={cn(
-            "flex items-center justify-between sm:px-6 py-3 lg:px-16 md:py-6 xl:px-32 shadow-md shadow-muted transition-all",
+            "flex items-center justify-between sm:px-6 py-3 lg:px-16 md:py-6 xl:px-32 shadow-md shadow-muted transition-all"
           )}
         >
           <div className="flex items-center justify-start">
@@ -74,7 +57,7 @@ export default function NavbarComp() {
 
           {
             <ul className="md:inline-flex items-center space-x-1 md:space-x-3 gap-4 hidden">
-              {navLinks.map((link, index) => {
+              {NAV_LINKS.map((link, index) => {
                 return (
                   <li key={index}>
                     <Link
@@ -96,7 +79,7 @@ export default function NavbarComp() {
           <div className="flex items-center ">
             <div className="flex items-center ml-3 gap-2 w-24 justify-evenly">
               <div className="flex gap-2">
-                {socialIcons.map((link, index) => {
+                {SOCIAL_LINKS.map((link, index) => {
                   if (index < 2) {
                     const { Icon } = link;
                     return (
@@ -146,14 +129,14 @@ export default function NavbarComp() {
             &lt;jrTilak/&gt;
           </h2>
           <ul className="space-y-2 font-medium mb-14 sm:mb-0">
-            {navLinks.map((link, index) => {
+            {NAV_LINKS.map((link, index) => {
               return <NavLi key={index} link={link} pathName={pathName} />;
             })}
           </ul>
         </div>
         <div className="fixed left-0 bottom-0 w-64 flex justify-center items-center py-2 ">
           <div className="flex justify-evenly py-2 px-4 w-48 ">
-            {socialIcons.map(({ type, href, Icon }) => {
+            {SOCIAL_LINKS.map(({ type, href, Icon }) => {
               return (
                 <SocialIcon type={type} key={type} href={href} Icon={Icon} />
               );

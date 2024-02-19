@@ -101,24 +101,6 @@ const ProjectCard = ({
               </span>
             </Link>
           </Button>
-          <TooltipProvider delayDuration={0}>
-            <Tooltip>
-              <TooltipTrigger>
-                <Button variant="ghost" className="px-2 py-1">
-                  <Link
-                    href={`${sourceCode}/blob/master/README.md`}
-                    target="_blank"
-                    className=" group cursor-pointer relative p-3 text-foreground"
-                  >
-                    <Info className="w-5 h-5 sm:w-6 sm:h-6" />
-                  </Link>
-                </Button>
-              </TooltipTrigger>
-              <TooltipContent>
-                <p>More info!</p>
-              </TooltipContent>
-            </Tooltip>
-          </TooltipProvider>
         </div>
       </div>
     </>
