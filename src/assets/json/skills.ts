@@ -172,6 +172,14 @@ const TOOLS = [
     link: "https://zod.dev/",
   },
   {
+    proficiency: "60",
+    icon: "https://www.svgrepo.com/svg/333088/framer",
+    _id: "Framer_2023-11-14-12:37:10",
+    title: "Framer Motion",
+    level: "Proficient",
+    link: "https://www.framer.com/motion/",
+  },  
+  {
     title: "Git",
     _id: "Git_2023-11-14-12:37:46",
     proficiency: "70",
