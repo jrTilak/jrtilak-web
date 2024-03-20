@@ -173,7 +173,7 @@ const TOOLS = [
   },
   {
     proficiency: "60",
-    icon: "https://www.svgrepo.com/svg/333088/framer",
+    icon: "https://www.svgrepo.com/show/333088/framer.svg",
     _id: "Framer_2023-11-14-12:37:10",
     title: "Framer Motion",
     level: "Proficient",
