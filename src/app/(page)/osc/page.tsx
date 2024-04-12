@@ -18,14 +18,14 @@ const page = () => {
         <TableHeader>
           <TableRow className="border-b-2 border-muted-foreground">
             <TableHead>Repository</TableHead>
-            <TableHead className="text-center" >Description</TableHead>
+            <TableHead className="text-center">Description</TableHead>
             <TableHead className="text-right">#PR</TableHead>
           </TableRow>
         </TableHeader>
         <TableBody>
           {OSC.map((osc) => {
             return (
-              <TableRow key={osc._id} >
+              <TableRow key={osc._id}>
                 <TableCell>
                   <Link href={`https://github.com/${osc.repo}`} target="_blank">
                     {osc.repo}
@@ -35,6 +35,7 @@ const page = () => {
                   <Link
                     href={`https://github.com/${osc.repo}/pull/${osc.issue_number}`}
                     target="_blank"
+                    className="truncate"
                   >
                     {osc.title}
                   </Link>
