@@ -1,4 +1,5 @@
 import EXPERIENCE from "@/assets/json/experience";
+import { cn } from "@/lib/utils";
 import { Check, Flame } from "lucide-react";
 import Link from "next/link";
 
@@ -9,12 +10,21 @@ const Timeline = ({
   date,
   status,
   link,
-}: (typeof EXPERIENCE)[number]) => {
+  i = 0,
+}: (typeof EXPERIENCE)[number] & {
+  i?: number;
+}) => {
   return (
     <>
       <div
         key={_id}
-        className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active"
+        style={{
+          animationDelay: `${i * 0.1}s`,
+        }}
+        className={cn(
+          "relative animate__faster animate__animated flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active",
+          i % 2 === 0 ? "animate__fadeInRight" : "animate__fadeInLeft "
+        )}
       >
         <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-slate-300 group-[.is-active]:bg-emerald-500  group-[.is-active]:text-emerald-50 shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
           {(status == "Enrolled" || status == "Ongoing") && (

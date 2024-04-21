@@ -2,7 +2,7 @@ import Image from "next/image";
 
 const HeroImg = ({ img }: { img: string }) => {
   return (
-    <div className="items-center justify-center mx-auto my-auto sm:flex lg:translate-y-0">
+    <div className="items-center justify-center mx-auto my-auto sm:flex lg:translate-y-0 animate__animated animate__zoomInDown animate__fast animate__delay-1">
       <Image
         className="w-full h-auto sm:min-h-[250px] sm:min-w-[250px] md:min-h-[300px] md:min-w-[300px] lg:min-h-[350px] lg:min-w-[350px] rounded-xl sm:rounded-full object-cover object-center border-2 sm:border-4 border-primary"
         alt=""

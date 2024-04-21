@@ -11,7 +11,7 @@ const Stats = () => {
     >
       <div className="grid gap-3 grid-cols-2 xs:grid-cols-4 mt-4">
         {stats.map((statsInfo, index: number) => (
-          <StatsCard key={index} {...statsInfo} />
+          <StatsCard key={index} {...statsInfo} i={index} />
         ))}
       </div>
     </div>

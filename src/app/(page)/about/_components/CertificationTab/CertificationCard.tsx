@@ -12,11 +12,18 @@ interface CertificationCardProps {
 
 const CertificationCard = ({
   certification,
+  i = 0,
 }: {
   certification: CertificationCardProps;
+  i?: number;
 }) => {
   return (
-    <div className="rounded overflow-hidden shadow-lg flex flex-col md:hover:scale-105 transition-all">
+    <div
+      style={{
+        animationDelay: `${i * 0.1}s`,
+      }}
+      className="rounded animate__fadeInUp animate__animated animate__faster overflow-hidden shadow-lg flex flex-col md:hover:scale-105 transition-all"
+    >
       <CertificationImage
         img={certification?.img}
         title={certification?.title}

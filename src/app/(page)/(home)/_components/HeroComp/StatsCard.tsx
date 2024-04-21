@@ -12,16 +12,20 @@ interface StatsCardProps {
   type: string;
   desc: string;
   link: string;
+  i: number;
 }
 
-const StatsCard = ({ count, type, desc, link }: StatsCardProps) => {
+const StatsCard = ({ count, type, desc, link, i }: StatsCardProps) => {
   return (
     <TooltipProvider delayDuration={0}>
       <Tooltip>
         <TooltipTrigger>
           <Link
             href={link}
-            className="bg-muted shadow-md dark:shadow-sm border border-gray-300 dark:border-gray-600 shadow-purple-300 sm:rounded-lg w-[120px] group cursor-pointer relative inline-block"
+            style={{
+              animationDelay: `${i * 0.1}s`,
+            }}
+            className="animate__animated animate__fadeInUp animate__faster bg-muted shadow-md dark:shadow-sm border border-gray-300 dark:border-gray-600 shadow-purple-300 sm:rounded-lg w-[120px] group cursor-pointer relative inline-block"
           >
             <div className="p-2 px-4 sm:px-4 sm:py-5">
               <dl>

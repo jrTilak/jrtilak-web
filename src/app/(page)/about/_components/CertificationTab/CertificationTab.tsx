@@ -8,11 +8,12 @@ const CertificationTab = () => {
     <>
       <div className="max-w-screen-xl w-full mx-auto p-5 sm:p-10 md:p-16">
         <div className="grid grid-cols-1 lg:grid-cols-2 2xl:grid-cols-3 gap-10">
-          {certifications?.map((certificate) => {
+          {certifications?.map((certificate, i) => {
             return (
               <CertificationCard
                 key={certificate.title}
                 certification={certificate}
+                i={i}
               />
             );
           })}

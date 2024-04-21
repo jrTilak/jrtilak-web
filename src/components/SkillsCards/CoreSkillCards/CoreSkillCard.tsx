@@ -9,9 +9,10 @@ interface CoreSkillCardProps {
     title: string;
     _id: string;
   };
+  i?: number;
 }
 
-const CoreSkillCard = ({ coreSkill }: CoreSkillCardProps) => {
+const CoreSkillCard = ({ coreSkill, i = 0 }: CoreSkillCardProps) => {
   const { title, desc, icon } = coreSkill;
   const [bgWidth, setBgWidth] = useState("0px");
 
@@ -24,7 +25,10 @@ const CoreSkillCard = ({ coreSkill }: CoreSkillCardProps) => {
         onMouseLeave={() => {
           setBgWidth("0px");
         }}
-        className=" max-w-[90vw] group sm:max-w-none md:max-w-[40vw] lg:max-w-[400px] relative rounded-lg border bg-muted select-none hover:shadow hover:shadow-purple-300 p-2 mt-4"
+        style={{
+          animationDelay: `${i * 0.1}s`,
+        }}
+        className=" max-w-[90vw] group animate__fadeInUp animate__animated animate__faster sm:max-w-none md:max-w-[40vw] lg:max-w-[400px] relative rounded-lg border bg-muted select-none hover:shadow hover:shadow-purple-300 p-2 mt-4"
       >
         <div
           style={{ width: bgWidth }}

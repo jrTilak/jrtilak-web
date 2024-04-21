@@ -22,9 +22,17 @@ const ProjectCard = ({
   sourceCode,
   desc,
   techs,
-}: (typeof PROJECTS_JSON)[number]) => {
+  i = 0,
+}: (typeof PROJECTS_JSON)[number] & {
+  i?: number;
+}) => {
   return (
-    <div className="relative flex w-full max-w-[26rem] min-w-[300px] sm:min-w-[372px] flex-col rounded-xl ">
+    <div
+      style={{
+        animationDelay: `${i * 0.1}s`,
+      }}
+      className="relative flex w-full animate__fadeInUp animate__animated animate__faster max-w-[26rem] min-w-[300px] sm:min-w-[372px] flex-col rounded-xl "
+    >
       <div className="top-6 right-6 absolute z-40 bg-muted-foreground rounded-xl  opacity-60 px-2 py-0.5 uppercase text-muted tracking-widest">
         {type}
       </div>

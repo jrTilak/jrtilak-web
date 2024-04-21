@@ -10,9 +10,10 @@ interface SkillCardProps {
     | (typeof SKILLS_JSON.techs)[number]
     | (typeof SKILLS_JSON.tools)[number]
     | null;
+  i?: number;
 }
 
-const SkillCard = ({ skill }: SkillCardProps) => {
+const SkillCard = ({ skill, i = 0 }: SkillCardProps) => {
   const [skillCardBgWidth, setSkillCardBgWidth] = useState("0px");
 
   return (
@@ -24,7 +25,10 @@ const SkillCard = ({ skill }: SkillCardProps) => {
         onMouseLeave={() => {
           setSkillCardBgWidth("0px");
         }}
-        className="xs:min-w-[170px] bg-muted relative  group flex cursor-pointer items-center gap-2 rounded border px-2 py-2  md:gap-3 lg:px-3 hover:shadow hover:shadow-purple-300"
+        style={{
+          animationDelay: `${i * 0.1}s`,
+        }}
+        className="xs:min-w-[170px] bg-muted relative animate__fadeInUp animate__animated animate__faster group flex cursor-pointer items-center gap-2 rounded border px-2 py-2  md:gap-3 lg:px-3 hover:shadow hover:shadow-purple-300"
       >
         <div
           style={{ width: skillCardBgWidth }}
@@ -56,13 +60,13 @@ const SkillCard = ({ skill }: SkillCardProps) => {
 
 export default SkillCard;
 
-export const SkillCardWrapper = ({ skill }: SkillCardProps) => {
+export const SkillCardWrapper = ({ skill, i }: SkillCardProps) => {
   return (
     <Link
       href={skill ? skill.link : "/about/skills"}
       target={skill ? "_blank" : "_self"}
     >
-      <SkillCard skill={skill} />
+      <SkillCard skill={skill} i={i} />
     </Link>
   );
 };

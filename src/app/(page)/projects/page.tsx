@@ -6,8 +6,8 @@ const page = async () => {
   return (
     <div>
       <div className="grid gap-4 justify-center justify-items-center grid-cols-1 md:grid-cols-2 xl:grid-cols-3 mx-auto">
-        {projectsJSON?.map((project) => {
-          return <ProjectCard key={project._id} {...project} />;
+        {projectsJSON?.map((project, i) => {
+          return <ProjectCard key={project._id} {...project} i={i} />;
         })}
       </div>
     </div>

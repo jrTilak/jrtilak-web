@@ -10,15 +10,15 @@ const SkillsListComp = ({ skills }: SkillsListCompProps) => {
   return (
     <div className="flex ">
       <div className="grid grid-cols-2 gap-2">
-        {skillsList?.map((skill) => {
+        {skillsList?.map((skill, i) => {
           return (
             <Suspense key={skill._id}>
-              <SkillCardWrapper skill={skill} />
+              <SkillCardWrapper skill={skill} i={i} />
             </Suspense>
           );
         })}
         <Suspense>
-          <SkillCardWrapper skill={null} />
+          <SkillCardWrapper skill={null} i={5} />
         </Suspense>
       </div>
     </div>

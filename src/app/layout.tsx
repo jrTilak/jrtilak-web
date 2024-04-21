@@ -1,3 +1,4 @@
+import "animate.css";
 import "@/app/styles/globals.css";
 import META_DATA from "@/assets/json/metaData";
 import Scrollbar from "@/components/Scrollbar/Scrollbar";

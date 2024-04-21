@@ -29,7 +29,7 @@ const Page = () => {
           borderRadius: "8px",
           willChange: "transform",
         }}
-        className="p-6 h-max md:w-max min-h-[80vh]"
+        className="p-6 h-max md:w-max min-h-[80vh] animate__fadeIn animate__animated animate__fast"
       >
         <iframe
           loading="lazy"

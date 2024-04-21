@@ -1,6 +1,6 @@
 "use client";
 import SocialLink from "./SocialLink";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import {
   AlertDialog,
   AlertDialogAction,
@@ -27,6 +27,7 @@ interface FormData {
 }
 
 const ContactForm: React.FC = () => {
+  const submitButtonRef = useRef<HTMLButtonElement>(null);
   const [formData, setFormData] = useState<FormData>({
     name: "",
     email: "",
@@ -39,6 +40,16 @@ const ContactForm: React.FC = () => {
     e.preventDefault();
     if (formData.subject.length === 0 || formData.message.length === 0) {
       toast.error("Please fill all the required fields.");
+      submitButtonRef.current?.classList.add(
+        "animate__animated",
+        "animate__headShake"
+      );
+      setTimeout(() => {
+        submitButtonRef.current?.classList.remove(
+          "animate__animated",
+          "animate__headShake"
+        );
+      }, 1000);
       return;
     }
     setIsFormSubmitting(true);
@@ -219,6 +230,7 @@ const ContactForm: React.FC = () => {
               </AlertDialogContent>
             </AlertDialog>
             <Button
+              ref={submitButtonRef}
               variant="purple"
               onClick={(e) => handleFormSubmit(e)}
               type="submit"

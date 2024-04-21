@@ -14,12 +14,12 @@ const HeroComp = () => {
     <section className="w-full">
       <div className="flex flex-col justify-between gap-4 px-4 pt-12 mx-auto sm:flex-row sm:pt-20 lg:pt-24">
         <div className="z-10 place-self-center max-w-[700px] w-full">
-          <p className="max-w-2xl font-light sm:mt-6 text-muted-foreground lg:mt-8 md:text-lg lg:text-xl">
+          <p className="max-w-2xl font-light sm:mt-6 text-muted-foreground lg:mt-8 md:text-lg lg:text-xl animate__fadeInLeft animate__animated animate__faster">
             {greetings || "Hey!"}
           </p>
           <MyTitle name={name} titles={titles} />
           <About about={about} />
-          <div className="flex flex-col gap-2 xs:flex-row sm:gap-4">
+          <div className="flex flex-col gap-2 xs:flex-row sm:gap-4 animate__fadeInLeft animate__animated">
             <Link href={cvLink} download target="_blank">
               <Button variant="purple" className="w-full xs:w-auto">
                 <span>Download CV</span>
