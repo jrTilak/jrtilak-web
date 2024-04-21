@@ -60,10 +60,10 @@ const Timeline = ({
             ) : (
               <h3 className="text-foreground font-semibold">{title}</h3>
             )}
-            <ul className="text-muted-foreground flex flex-col gap-2 mt-1">
+            <ul className="text-muted-foreground flex flex-col gap-0.5 mt-1">
               {desc.map((d, i) => (
                 <li key={i} className="flex gap-1 items-start">
-                  <div className="w-2 h-2 min-w-[8px] min-h-[8px] mt-2 bg-muted-foreground rounded-full mr-2"></div>
+                  <div className="w-1.5 h-1.5 min-w-[6px] min-h-[6px] mt-2 bg-muted-foreground rounded-full mr-2"></div>
                   <span>{d}</span>
                 </li>
               ))}
