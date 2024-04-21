@@ -26,7 +26,7 @@ const NAV_LINKS: NavLinkTypes[] = [
   },
   {
     name: "Blogs",
-    href: "/blogs",
+    href: "https://dev.to/jrtilak",
     LinkIcon: Keyboard,
   },
   {

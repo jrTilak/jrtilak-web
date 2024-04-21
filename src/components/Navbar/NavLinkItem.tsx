@@ -10,6 +10,7 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({ link, pathName }) => {
     <li>
       <Link
         href={href}
+        target={href.startsWith("http") ? "_blank" : "_self"}
         className={cn(
           "flex items-center p-2 rounded-lg  group",
           isActiveLink
