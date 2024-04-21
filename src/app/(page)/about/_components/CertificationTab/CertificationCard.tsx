@@ -31,7 +31,7 @@ const CertificationCard = ({
         <Link
           href={certification?.href || ""}
           target="_blank"
-          className="font-medium text-base inline-block hover:text-primary transition duration-500 ease-in-out  mb-2 cursor-pointer"
+          className="font-medium text-base inline-block hover:text-primary hover:underline transition duration-500 ease-in-out  mb-2 cursor-pointer"
         >
           {certification?.title}
         </Link>

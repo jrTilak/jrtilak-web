@@ -30,10 +30,9 @@ const CertificationImage = ({
           elem.msRequestFullscreen();
         }
         elem.classList.remove("object-cover");
+        elem.classList.add("object-contain object-center");
       }
-    } catch (e) {
-      toast.error("Failed to enter full screen");
-    }
+    } catch (e) {}
   };
 
   useEffect(() => {
@@ -42,6 +41,7 @@ const CertificationImage = ({
       elem.addEventListener("fullscreenchange", () => {
         if (!document.fullscreenElement) {
           elem.classList.add("object-cover");
+          elem.classList.remove("object-contain object-center");
         }
       });
     }
@@ -50,6 +50,7 @@ const CertificationImage = ({
         elem.removeEventListener("fullscreenchange", () => {
           if (!document.fullscreenElement) {
             elem.classList.add("object-cover");
+            elem.classList.remove("object-contain object-center");
           }
         });
       }

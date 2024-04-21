@@ -1,15 +1,14 @@
 import { NavLinkTypes } from "@/components/Navbar/types";
 import {
   FileText,
-  Gem,
   GitCompareArrows,
   Home,
-  Route,
+  Keyboard,
   SendHorizontal,
   UserRound,
 } from "lucide-react";
 
- const NAV_LINKS: NavLinkTypes[] = [
+const NAV_LINKS: NavLinkTypes[] = [
   {
     name: "Home",
     href: "/",
@@ -25,21 +24,11 @@ import {
     href: "/projects",
     LinkIcon: GitCompareArrows,
   },
-  // {
-  //   name: "Blogs",
-  //   href: "/blogs",
-  //   LinkIcon: BsFillFileTextFill,
-  // },
-  // {
-  //   name: "Journey",
-  //   href: "/journey",
-  //   LinkIcon: Route,
-  // },
-//   {
-//     name: "Services",
-//     href: "/services",
-//     LinkIcon: Gem,
-//   },
+  {
+    name: "Blogs",
+    href: "/blogs",
+    LinkIcon: Keyboard,
+  },
   {
     name: "Resume",
     href: "/cv",

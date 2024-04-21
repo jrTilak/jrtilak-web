@@ -121,6 +121,14 @@ const TECHS = [
     link: "https://developer.mozilla.org/en-US/docs/Web/HTML",
   },
   {
+    _id: "Python",
+    proficiency: 40,
+    title: "Python",
+    icon: "https://www.svgrepo.com/show/452091/python.svg",
+    level: "Learner",
+    link: "https://www.python.org/",
+  },
+  {
     _id: "C",
     proficiency: 70,
     title: "C",
@@ -178,7 +186,7 @@ const TOOLS = [
     title: "Framer Motion",
     level: "Proficient",
     link: "https://www.framer.com/motion/",
-  },  
+  },
   {
     title: "Git",
     _id: "Git_2023-11-14-12:37:46",

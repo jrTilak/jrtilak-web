@@ -4,7 +4,6 @@ import Profile from "../_components/ProfileComp/Profile";
 import TabButtons from "../_components/Tabs/TabButtons";
 import { Tabs } from "../_components/Tabs/Tabs";
 import SkillsTab from "../_components/SkillsTab/SkillsTab";
-import EducationTab from "../_components/EducationTab/EducationTab";
 import CertificationTab from "../_components/CertificationTab/CertificationTab";
 import ExperienceTab from "../_components/ExperienceTab/ExperienceTab";
 import ABOUT_JSON from "@/assets/json/about";
@@ -27,17 +26,15 @@ const Page = async ({ params }: { params: { tab: string } }) => {
         {(() => {
           switch (activeTab) {
             case "about":
-              return <AboutTab  />;
+              return <AboutTab />;
             case "skills":
               return <SkillsTab activeTab="techs" />;
-            case "education":
-              return <EducationTab />;
             case "certifications":
               return <CertificationTab />;
             case "experience":
               return <ExperienceTab />;
             default:
-              return <AboutTab  />;
+              return <AboutTab />;
           }
         })()}
       </div>

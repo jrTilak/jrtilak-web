@@ -15,10 +15,10 @@ export const Tabs = [
     title: "skills",
     icon: GitPullRequestArrow,
   },
-  {
-    title: "education",
-    icon: GraduationCap,
-  },
+  // {
+  //   title: "education",
+  //   icon: GraduationCap,
+  // },
   {
     title: "experience",
     icon: AreaChart,

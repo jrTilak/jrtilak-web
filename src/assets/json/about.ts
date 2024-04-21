@@ -40,7 +40,7 @@ const experienceInMilliseconds =
   new Date().getTime() - new Date("2022-10-01").getTime();
 const experienceInYears =
   experienceInMilliseconds / (1000 * 60 * 60 * 24 * 365);
-const formattedExperience = experienceInYears.toFixed(1);
+export const formattedExperience = experienceInYears.toFixed(1);
 
 const STATS = [
   {
@@ -77,7 +77,7 @@ const TITLES = [
 ];
 
 const ABOUT =
-  "🙋\u200d♂️ Greetings! I'm Tilak Thapa(jrTilak), a passionate web developer with more than 1 years of experience. I specialize web development in `React and Next.js`. I'm also a huge fan of open-source. I'm currently looking for opportunities to work as a Full Stack Developer.";
+  `🙋\u200d♂️ Greetings! I'm Tilak Thapa(jrTilak), a passionate web developer with more than ${formattedExperience} years of experience. I specialize web development in \`React and Next.js\`. I'm also a huge fan of open-source. I'm currently looking for opportunities to work as a Full Stack Developer.`;
 
 const EDUCATION = [
   {
@@ -117,5 +117,6 @@ const ABOUT_JSON = {
   greetings: "Hey!",
   education: EDUCATION,
   certifications: CERTIFICATIONS,
+  
 };
 export default ABOUT_JSON;

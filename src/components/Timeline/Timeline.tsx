@@ -1,4 +1,4 @@
-import ABOUT_JSON from "@/assets/json/about";
+import EXPERIENCE from "@/assets/json/experience";
 import { Check, Flame } from "lucide-react";
 import Link from "next/link";
 
@@ -9,7 +9,7 @@ const Timeline = ({
   date,
   status,
   link,
-}: (typeof ABOUT_JSON.education)[number]) => {
+}: (typeof EXPERIENCE)[number]) => {
   return (
     <>
       <div
@@ -50,7 +50,14 @@ const Timeline = ({
             ) : (
               <h3 className="text-foreground font-semibold">{title}</h3>
             )}
-            <p className="text-muted-foreground">{desc}</p>
+            <ul className="text-muted-foreground flex flex-col gap-2 mt-1">
+              {desc.map((d, i) => (
+                <li key={i} className="flex gap-1 items-start">
+                  <div className="w-2 h-2 min-w-[8px] min-h-[8px] mt-2 bg-muted-foreground rounded-full mr-2"></div>
+                  <span>{d}</span>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </div>

@@ -1,6 +1,8 @@
+import { formattedExperience } from "./about";
+
 const aboutMe = {
   h1: "Hi 👋, I'm Tilak Thapa (jrTilak)",
-  h2: "Full Stack Web Developer with more than `1 years` of experience in `MERN` and `Next.js`",
+  h2: `Full Stack Web Developer with more than \`${formattedExperience} years\` of experience in \`MERN\` and \`Next.js\``,
   aboutMe: {
     title: "About Me",
     desc: {
@@ -11,7 +13,7 @@ const aboutMe = {
   more: [
     "👨‍🎓 B.E. Computer Science student with a focus on web development.",
     "💻 Proficient in React.js, MERN Stack, and Next.js.",
-    "⏳ Has more than 1 years of experience in the field.",
+    `⏳ Has more than ${formattedExperience} years of experience in the field.`,
     "🔍 Seeking job opportunities.",
     "📚 Spent the past year expanding knowledge and skills in web development.",
     "🎯 Focused on mastering Next.js and have completed several projects.",
