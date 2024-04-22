@@ -41,7 +41,7 @@ const CertificationImage = ({
       elem.addEventListener("fullscreenchange", () => {
         if (!document.fullscreenElement) {
           elem.classList.add("object-cover");
-          elem.classList.remove("object-contain object-center");
+          elem.classList.remove("object-contain object-center ");
         }
       });
     }
@@ -61,7 +61,7 @@ const CertificationImage = ({
     <Image
       onClick={requestFullScreen}
       id={id}
-      className="w-full h-[200px] min-w-full sm:h-[250px] max-h-[250px] object-cover object-top sm:min-w-[357.3px]"
+      className="w-full h-[200px] cursor-pointer min-w-full sm:h-[250px] max-h-[250px] object-cover object-top sm:min-w-[357.3px]"
       src={img || placeholderImg}
       placeholder="blur"
       alt={title}
