@@ -9,7 +9,7 @@ const Page = () => {
         href={ABOUT_JSON.cvLink}
         download
         target="_blank"
-        className="md:fixed top-20 right-4 mt-4"
+        className="md:fixed top-20 right-4 mt-4 z-40"
       >
         <Button variant="purple" className="w-full xs:w-auto">
           <span>Download CV</span>
@@ -17,42 +17,46 @@ const Page = () => {
         </Button>
       </Link>
       {/* // Canva Embed */}
-      <div
-        style={{
-          position: "relative",
-          paddingTop: "56.2225%",
-          paddingBottom: 0,
-          boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)",
-          marginTop: "1rem",
-          marginBottom: "0.9em",
-          overflow: "hidden",
-          borderRadius: "8px",
-          willChange: "transform",
-        }}
-        className="p-6 h-max md:w-max min-h-[80vh] animate__fadeIn animate__animated animate__fast"
-      >
-        <iframe
-          loading="lazy"
+
+      <div>
+        <div
           style={{
-            position: "absolute",
-            width: "100%",
-            height: "100%",
-            top: 0,
-            left: 0,
-            border: "none",
-            padding: 0,
-            margin: 0,
+            position: "relative",
+            paddingTop: "141.4286%",
+            paddingBottom: 0,
+            boxShadow: "0 2px 8px 0 rgba(63,69,81,0.16)",
+            marginTop: "1.6em",
+            marginBottom: "0.9em",
+            overflow: "hidden",
+            borderRadius: 8,
+            willChange: "transform",
           }}
-          src="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF6TI8wUt8&#x2F;view?embed"
-          allowFullScreen
-          allow="fullscreen"
-        ></iframe>
+          className="w-[90vw] h-fit md:max-w-[700px] "
+        >
+          <iframe
+            loading="lazy"
+            style={{
+              position: "absolute",
+              width: "100%",
+              height: "100%",
+              top: 0,
+              left: 0,
+              border: "none",
+              padding: 0,
+              margin: 0,
+            }}
+            src="https://www.canva.com/design/DAGDH7PHv4c/DBewW2LVRITYxCyzqQWQtQ/view?embed"
+            allowFullScreen={true}
+            allow="fullscreen"
+          ></iframe>
+        </div>
         <a
-          href="https:&#x2F;&#x2F;www.canva.com&#x2F;design&#x2F;DAF6TI8wUt8&#x2F;view?utm_content=DAF6TI8wUt8&amp;utm_campaign=designshare&amp;utm_medium=embeds&amp;utm_source=link"
+          href="https://www.canva.com/design/DAGDH7PHv4c/DBewW2LVRITYxCyzqQWQtQ/view?utm_content=DAGDH7PHv4c&utm_campaign=designshare&utm_medium=embeds&utm_source=link"
           target="_blank"
+          className="text-muted-foreground underline"
           rel="noopener"
         >
-          Tilak Thapa Resume - iamjrtilak@gmail.com
+          Tilak Thapa Resume
         </a>{" "}
         by Tilak Thapa
       </div>
