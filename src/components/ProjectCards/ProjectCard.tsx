@@ -19,9 +19,10 @@ const ProjectCard = ({
   img,
   title,
   liveDemo,
-  sourceCode,
+  sourceCode = "/sorry/code",
   desc,
   techs,
+  isUnderDevelopment,
   i = 0,
 }: (typeof PROJECTS_JSON)[number] & {
   i?: number;
@@ -38,6 +39,7 @@ const ProjectCard = ({
       </div>
       <Link
         href={liveDemo}
+        target="_blank"
         className="group hover:scale-105 transition-all h-[226px] sm:h-[226px] overflow-hidden relative mx-2 sm:mx-4 mt-2 sm:mt-4 rounded-xl bg-clip-border shadow-lg shadow-blue-gray-500/40"
       >
         <Image
@@ -48,11 +50,18 @@ const ProjectCard = ({
           height={500}
           width={500}
         />
+        {isUnderDevelopment && (
+          <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-muted-foreground to-primary opacity-40 flex items-center justify-center">
+            <p className="text-foreground font-bold text-2xl">
+              Under Development
+            </p>
+          </div>
+        )}
       </Link>
       <div className=" p-4 sm:p-6 !pb-0">
         <div className="mb-2 sm:mb-3 flex items-center justify-between">
-          <Link href={liveDemo}>
-            <h1 className="block text-foreground text-xl font-bold leading-snug tracking-normal antialiased">
+          <Link target="_blank" href={liveDemo}>
+            <h1 className="block text-foreground  text-xl font-bold leading-snug tracking-normal antialiased">
               <UnderlineOnHover text={title} />
             </h1>
           </Link>
