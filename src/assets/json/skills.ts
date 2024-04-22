@@ -188,6 +188,14 @@ const TOOLS = [
     link: "https://www.framer.com/motion/",
   },
   {
+    proficiency: "50",
+    icon: "https://vitest.dev/logo.svg",
+    _id: "Vitest_2023-11-14-12:37:10",
+    title: "Vitest",
+    level: "Learner",
+    link: "https://vitest.dev/",
+  },
+  {
     title: "Git",
     _id: "Git_2023-11-14-12:37:46",
     proficiency: "70",

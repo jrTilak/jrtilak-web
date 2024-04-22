@@ -6,8 +6,22 @@ import cGamesImg from "@/assets/project-img/c.png";
 import edubrainImg from "@/assets/project-img/edubrain.png";
 import javaSportsImg from "@/assets/project-img/java-sports.png";
 import dhanalakshmiImg from "@/assets/project-img/dhanalakshmi.png";
+import lazykitImg from "@/assets/project-img/lazykit.png";
 
 const PROJECTS_JSON = [
+  {
+    img: lazykitImg,
+    sourceCode: "https://github.com/jrTilak/lazykit",
+    techs: ["Next.js", "NPM Package", "Vitest", "Tailwind CSS", "Markdown"],
+    liveDemo: "https://lazykit.thapatilak.com.np/",
+    type: "Web App / NPM Package",
+    title: "Lazykit - Initial Release! @v1.0.0",
+    tags: ["react app", "jrtilak", "javascript", "vite", "lazykit"],
+    desc: "Trim the fat, keep the function! Refine your JavaScript workflows with Lazykit. A concentrated collection of lean utility functions, not a bloated library. Lazykit has many utility functions that can help you in your day-to-day coding tasks that you can just copy-paste or add as an NPM package.",
+    _id: "Javasports_-_E-commerce_Platform_for_Sports_Goods_2023-12-07-07:26:15",
+    createdAt: "March 17, 2024",
+    isFeatured: true,
+  },
   {
     img: javaSportsImg,
     techs: ["React.js", "Vite.js", "Tailwind CSS"],

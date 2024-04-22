@@ -13,4 +13,7 @@ export const ICONS = {
   web_development: "https://www.svgrepo.com/show/261945/web-development.svg",
   express_js: "https://www.svgrepo.com/show/330398/express.svg",
   framer_motion: "https://www.svgrepo.com/show/333088/framer.svg",
+  npm_package: "https://www.svgrepo.com/show/452077/npm.svg",
+  markdown: "https://www.svgrepo.com/show/372900/markdown.svg",
+  vitest: "https://vitest.dev/logo.svg",
 };
