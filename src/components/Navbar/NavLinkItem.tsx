@@ -4,7 +4,9 @@ import { cn } from "@/lib/utils";
 
 const NavLinkItem: React.FC<NavLinkItemProps> = ({ link, pathName }) => {
   const { name, href, LinkIcon } = link;
-  const isActiveLink = pathName.split("/")[1] === href.split("/")[1];
+  const isActiveLink = href.startsWith("http")
+    ? false
+    : pathName.split("/")[1] === href.split("/")[1];
 
   return (
     <li>

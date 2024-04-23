@@ -77,7 +77,7 @@ const TITLES = [
 ];
 
 const ABOUT =
-  `🙋\u200d♂️ Greetings! I'm Tilak Thapa(jrTilak), a passionate web developer with more than ${formattedExperience} years of experience. I specialize web development in \`React and Next.js\`. I'm also a huge fan of open-source. I'm currently looking for opportunities to work as a Full Stack Developer.`;
+  `🙋\u200d♂️ Greetings! I'm Tilak Thapa(jrTilak), a passionate web developer with more than ${formattedExperience} years of experience. I specialize web development in \`MERN Stack\` and also proficient in \`Next.js\`. I'm also a huge fan of open-source. I'm currently looking for opportunities to work as a Full Stack Developer.`;
 
 const EDUCATION = [
   {
