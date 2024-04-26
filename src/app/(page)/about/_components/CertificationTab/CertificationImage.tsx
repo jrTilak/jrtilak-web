@@ -3,6 +3,7 @@ import Image from "next/image";
 import placeholderImg from "@/assets/img/projectPlaceholder.jpg";
 import { useEffect } from "react";
 import toast from "react-hot-toast";
+import handleGAEvent from "@/utils/handleGAEvent";
 
 const CertificationImage = ({
   img,
@@ -14,6 +15,11 @@ const CertificationImage = ({
   id: string;
 }) => {
   const requestFullScreen = () => {
+    handleGAEvent({
+      action: "view certification image fullscreen",
+      category: "Certification Click",
+      label: title,
+    });
     const elem = document.getElementById(id) as any;
     try {
       if (elem) {

@@ -1,4 +1,5 @@
 import OSC from "@/assets/json/osc";
+import GALink from "@/components/Analytics/GALink";
 import {
   Table,
   TableBody,
@@ -27,26 +28,44 @@ const page = () => {
             return (
               <TableRow key={osc._id}>
                 <TableCell>
-                  <Link href={`https://github.com/${osc.repo}`} target="_blank">
+                  <GALink
+                    ga={{
+                      action: "click osc",
+                      category: "Open Source Contribution Click",
+                      label: osc.repo,
+                    }}
+                    href={`https://github.com/${osc.repo}`}
+                    target="_blank"
+                  >
                     {osc.repo}
-                  </Link>
+                  </GALink>
                 </TableCell>
                 <TableCell className="text-center">
-                  <Link
+                  <GALink
+                    ga={{
+                      action: "click osc",
+                      category: "Open Source Contribution Click",
+                      label: osc.title,
+                    }}
                     href={`https://github.com/${osc.repo}/pull/${osc.issue_number}`}
                     target="_blank"
                     className="truncate"
                   >
                     {osc.title}
-                  </Link>
+                  </GALink>
                 </TableCell>
                 <TableCell className="text-right">
-                  <Link
+                  <GALink
+                    ga={{
+                      action: "click osc",
+                      category: "Open Source Contribution Click",
+                      label: osc.issue_number.toString(),
+                    }}
                     href={`https://github.com/${osc.repo}/pull/${osc.issue_number}`}
                     target="_blank"
                   >
                     #{osc.issue_number}
-                  </Link>
+                  </GALink>
                 </TableCell>
               </TableRow>
             );

@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import TechCardLists from "./TechCardLists";
 import UnderlineOnHover from "../Effects/UnderlineOnHover";
 import projectPlaceholderImg from "@/assets/img/projectPlaceholder.jpg";
@@ -13,6 +12,7 @@ import {
 import { Suspense } from "react";
 import { ChevronsRight, Github } from "lucide-react";
 import PROJECTS_JSON from "@/assets/json/projects";
+import GALink from "../Analytics/GALink";
 
 const ProjectCard = ({
   type,
@@ -37,7 +37,12 @@ const ProjectCard = ({
       <div className="top-6 right-6 absolute z-40 bg-muted-foreground rounded-xl  opacity-60 px-2 py-0.5 uppercase text-muted tracking-widest">
         {type}
       </div>
-      <Link
+      <GALink
+        ga={{
+          category: "Featured Projects",
+          action: "Navigate to Live Demo",
+          label: title,
+        }}
         href={liveDemo}
         target="_blank"
         className="group hover:scale-105 transition-all h-[226px] sm:h-[226px] overflow-hidden relative mx-2 sm:mx-4 mt-2 sm:mt-4 rounded-xl bg-clip-border shadow-lg shadow-blue-gray-500/40"
@@ -57,14 +62,22 @@ const ProjectCard = ({
             </p>
           </div>
         )}
-      </Link>
+      </GALink>
       <div className=" p-4 sm:p-6 !pb-0">
         <div className="mb-2 sm:mb-3 flex items-center justify-between">
-          <Link target="_blank" href={liveDemo}>
+          <GALink
+            ga={{
+              category: "Featured Projects",
+              action: "Navigate to Live Demo",
+              label: title,
+            }}
+            target="_blank"
+            href={liveDemo}
+          >
             <h1 className="block text-foreground  text-xl font-bold leading-snug tracking-normal antialiased">
               <UnderlineOnHover text={title} />
             </h1>
-          </Link>
+          </GALink>
         </div>
         <p className="block  font-light leading-relaxed text-muted-foreground antialiased">
           {desc?.slice(0, 180)}
@@ -79,13 +92,18 @@ const ProjectCard = ({
           <Tooltip>
             <TooltipTrigger>
               <Button variant="ghost" className="px-2 py-1">
-                <Link
+                <GALink
+                  ga={{
+                    category: "Featured Projects",
+                    action: "Navigate to Source Code Repo",
+                    label: title,
+                  }}
                   target="_blank"
                   href={sourceCode}
                   className=" group cursor-pointer relative p-3 text-foreground"
                 >
                   <Github className="w-5 h-5 sm:w-6 sm:h-6" />
-                </Link>
+                </GALink>
               </Button>
             </TooltipTrigger>
             <TooltipContent>
@@ -94,7 +112,12 @@ const ProjectCard = ({
           </Tooltip>
         </TooltipProvider>
         <Button variant="secondary" className="w-full">
-          <Link
+          <GALink
+            ga={{
+              category: "Featured Projects",
+              action: "Navigate to Live Demo",
+              label: title,
+            }}
             target="_blank"
             href={liveDemo}
             className=" sm:w-full  p-3 sm:px-5 sm:py-3 min-w-[140px] "
@@ -103,7 +126,7 @@ const ProjectCard = ({
               <span>View Live</span>
               <ChevronsRight className="w-5 h-5 sm:w-6 sm:h-6" />
             </span>
-          </Link>
+          </GALink>
         </Button>
       </div>
     </div>

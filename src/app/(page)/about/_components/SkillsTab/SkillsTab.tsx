@@ -1,3 +1,4 @@
+import GALink from "@/components/Analytics/GALink";
 import SkillsComp from "./SkillsComp";
 import { skillTabs } from "./SkillTabs";
 import Link from "next/link";
@@ -25,16 +26,20 @@ const SkillsTab = ({ activeTab }: SkillsTabProps) => {
             );
           } else {
             return (
-              <Link
+              <GALink
+                ga={{
+                  action: "click " + name,
+                  category: "Tab Change in Skills Page",
+                  label: name,
+                }}
                 href={`/about/skills/${name}`}
-                scroll={false}
                 key={index}
                 className="px-3 py-2 rounded  shadow-md flex items-center justify-center text-primary bg-muted"
               >
                 {" "}
                 <Icon className="h-5 w-5 mr-2" />
                 {name[0].toUpperCase() + name.slice(1)}
-              </Link>
+              </GALink>
             );
           }
         })}

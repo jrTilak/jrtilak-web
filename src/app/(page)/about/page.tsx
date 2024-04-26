@@ -5,7 +5,6 @@ import AboutTab from "./_components/AboutTab/AboutTab";
 import ABOUT_JSON from "@/assets/json/about";
 
 const page = async () => {
-  const about = ABOUT_JSON;
   return (
     <>
       <div className="flex flex-col mx-auto gap-4 items-center w-full md:w-[80vw] min-h-screen">

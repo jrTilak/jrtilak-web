@@ -2,12 +2,12 @@ import MyTitle from "./MyTitle";
 import Stats from "./StatsList";
 import About from "./About";
 import { Button } from "@/components/ui/button";
-import Link from "next/link";
 import HeroImg from "./HeroImg";
 
 import ABOUT_JSON from "@/assets/json/about";
 
 import { ArrowRight, Download } from "lucide-react";
+import GALink from "@/components/Analytics/GALink";
 const HeroComp = () => {
   const { greetings, name, titles, about, cvLink, img } = ABOUT_JSON;
   return (
@@ -20,13 +20,27 @@ const HeroComp = () => {
           <MyTitle name={name} titles={titles} />
           <About about={about} />
           <div className="flex flex-col gap-2 xs:flex-row sm:gap-4 animate__fadeInLeft animate__animated">
-            <Link href={cvLink} download target="_blank">
+            <GALink
+              ga={{
+                category: "Hero",
+                action: "click",
+                label: "Download CV",
+              }}
+              href={cvLink}
+              download
+              target="_blank"
+            >
               <Button variant="purple" className="w-full xs:w-auto">
                 <span>Download CV</span>
                 <Download className="ml-2 h-4 w-4" />
               </Button>
-            </Link>
-            <Link
+            </GALink>
+            <GALink
+              ga={{
+                category: "Hero",
+                action: "click",
+                label: "Contact",
+              }}
               href="/contact"
               className="inline-flex items-center justify-center text-center "
             >
@@ -34,7 +48,7 @@ const HeroComp = () => {
                 Let&apos;s Talk
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Button>
-            </Link>
+            </GALink>
           </div>
         </div>
         <HeroImg img={img} />

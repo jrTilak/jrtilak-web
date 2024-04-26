@@ -11,6 +11,7 @@ import { Button } from "../ui/button";
 import { Menu, X } from "lucide-react";
 import NAV_LINKS from "@/assets/json/navLinks";
 import SOCIAL_LINKS from "@/assets/json/sockialLinks";
+import GALink from "../Analytics/GALink";
 
 // main function
 export default function NavbarComp() {
@@ -60,7 +61,12 @@ export default function NavbarComp() {
               {NAV_LINKS.map((link, index) => {
                 return (
                   <li key={index}>
-                    <Link
+                    <GALink
+                      ga={{
+                        action: "click",
+                        category: "Navbar",
+                        label: link.name,
+                      }}
                       href={link.href}
                       className={cn(
                         "inline-flex items-center text-lg font-medium opacity-60 hover:text-primary",
@@ -68,7 +74,7 @@ export default function NavbarComp() {
                       )}
                     >
                       {link.name}
-                    </Link>
+                    </GALink>
                   </li>
                 );
               })}
@@ -83,9 +89,17 @@ export default function NavbarComp() {
                   if (index < 2) {
                     const { Icon } = link;
                     return (
-                      <Link href={link.href} key={link.type}>
+                      <GALink
+                        ga={{
+                          category: "Social Links",
+                          action: "click",
+                          label: link.type,
+                        }}
+                        href={link.href}
+                        key={link.type}
+                      >
                         <Icon className="w-4 h-4 rounded cursor-pointer hover:scale-110 hover:text-primary transition-all" />
-                      </Link>
+                      </GALink>
                     );
                   }
                 })}

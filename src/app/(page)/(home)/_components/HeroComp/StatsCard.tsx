@@ -1,3 +1,4 @@
+import GALink from "@/components/Analytics/GALink";
 import {
   Tooltip,
   TooltipContent,
@@ -20,7 +21,12 @@ const StatsCard = ({ count, type, desc, link, i }: StatsCardProps) => {
     <TooltipProvider delayDuration={0}>
       <Tooltip>
         <TooltipTrigger>
-          <Link
+          <GALink
+            ga={{
+              category: "Stats",
+              action: "click " + link,
+              label: type,
+            }}
             href={link}
             style={{
               animationDelay: `${i * 0.1}s`,
@@ -37,7 +43,7 @@ const StatsCard = ({ count, type, desc, link, i }: StatsCardProps) => {
                 </dt>
               </dl>
             </div>
-          </Link>
+          </GALink>
         </TooltipTrigger>
         <TooltipContent>
           <p>{desc}</p>

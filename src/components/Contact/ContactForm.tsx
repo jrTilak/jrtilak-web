@@ -18,6 +18,7 @@ import toast from "react-hot-toast";
 
 import emailjs from "@emailjs/browser";
 import SOCIAL_LINKS from "@/assets/json/sockialLinks";
+import GAButton from "../Analytics/GAButton";
 
 interface FormData {
   name: string;
@@ -210,9 +211,18 @@ const ContactForm: React.FC = () => {
           <div className="flex items-center justify-center sm:justify-end gap-4 sm:self-end w-full">
             <AlertDialog>
               <AlertDialogTrigger>
-                <Button role="button" type="button" variant="outline">
+                <GAButton
+                  ga={{
+                    category: "Contact Form",
+                    action: "Reset",
+                    label: "Contact Form",
+                  }}
+                  role="button"
+                  type="button"
+                  variant="outline"
+                >
                   Cancel
-                </Button>
+                </GAButton>
               </AlertDialogTrigger>
               <AlertDialogContent>
                 <AlertDialogHeader>
@@ -229,15 +239,19 @@ const ContactForm: React.FC = () => {
                 </AlertDialogFooter>
               </AlertDialogContent>
             </AlertDialog>
-            <Button
+            <GAButton
+              ga={{
+                category: "Contact Form",
+                action: "Submit",
+                label: "Contact Form",
+              }}
               ref={submitButtonRef}
               variant="purple"
-              onClick={(e) => handleFormSubmit(e)}
               type="submit"
             >
               {isFormSubmitting ? "Sending..." : "Send"}
               <SendHorizontal className="ml-2 w-4 h-4" />
-            </Button>
+            </GAButton>
           </div>
         </div>
       </form>

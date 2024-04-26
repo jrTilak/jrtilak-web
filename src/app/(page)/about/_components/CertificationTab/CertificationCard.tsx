@@ -1,6 +1,7 @@
 import Link from "next/link";
 import React from "react";
 import CertificationImage from "./CertificationImage";
+import GALink from "@/components/Analytics/GALink";
 
 interface CertificationCardProps {
   href: string;
@@ -35,13 +36,18 @@ const CertificationCard = ({
             {certification?.type}
           </span>
         </div>
-        <Link
+        <GALink
+          ga={{
+            action: "click certification",
+            category: "Certification Click",
+            label: certification?.title,
+          }}
           href={certification?.href || ""}
           target="_blank"
           className="font-medium text-base inline-block hover:text-primary hover:underline transition duration-500 ease-in-out  mb-2 cursor-pointer"
         >
           {certification?.title}
-        </Link>
+        </GALink>
       </div>
     </div>
   );

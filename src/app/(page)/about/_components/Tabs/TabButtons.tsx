@@ -1,3 +1,4 @@
+import GALink from "@/components/Analytics/GALink";
 import { Tabs } from "./Tabs";
 import Link from "next/link";
 export default function TabButtons({ activeTab }: { activeTab: string }) {
@@ -25,14 +26,18 @@ export default function TabButtons({ activeTab }: { activeTab: string }) {
             } else {
               return (
                 <li className="mr-2" key={Tab.title}>
-                  <Link
-                    scroll={false}
+                  <GALink
+                    ga={{
+                      action: "click " + Tab.title,
+                      category: "Tab Change in About Page",
+                      label: Tab.title,
+                    }}
                     href={`/about/${Tab.title.toLowerCase()}`}
                     className="inline-flex items-center justify-center p-3 sm:p-4 border-b-2 border-transparent rounded-t-lg hover:text-gray-600 hover:border-gray-300 dark:hover:text-gray-300 group transition-all"
                   >
                     <Tab.icon className={inActiveIconClassName} />
                     {Tab.title[0].toUpperCase() + Tab.title.slice(1)}
-                  </Link>
+                  </GALink>
                 </li>
               );
             }
