@@ -4,12 +4,8 @@ import META_DATA from "@/assets/json/metaData";
 import { ThemeProvider } from "@/context/ThemeProvider";
 import type { Metadata } from "next";
 import { Toaster } from "react-hot-toast";
-import Analytics from "@/components/Analytics";
-import ReactGA from "react-ga4";
-
+import { GoogleAnalytics } from "@next/third-parties/google";
 export const metadata: Metadata = META_DATA;
-
-ReactGA.initialize(process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID as string);
 
 export default function RootLayout({
   children,
@@ -28,7 +24,9 @@ export default function RootLayout({
       <body className="h-full w-full">
         {children}
         <Toaster position="top-right" />
-        <Analytics />
+        <GoogleAnalytics
+          gaId={process.env.NEXT_PUBLIC_GA_MEASUREMENT_ID as string}
+        />
       </body>
       {/* </ThemeProvider> */}
     </html>

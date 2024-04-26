@@ -1,3 +1,4 @@
+import Analytics from "@/components/Analytics";
 import Footer from "@/components/Footer/Footer";
 import NavbarComp from "@/components/Navbar/NavbarComp";
 import Script from "next/script";
@@ -13,6 +14,7 @@ export default function PagesLayout({
         {children}
       </main>
       <Footer />
+      <Analytics />
     </>
   );
 }

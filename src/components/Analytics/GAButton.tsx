@@ -7,7 +7,7 @@ type GAButtonProps = ButtonProps & {
 };
 
 const GAButton = React.forwardRef<HTMLButtonElement, GAButtonProps>(
-  ({ children, onClick, ...props }, ref) => {
+  ({ children, onClick, ga, ...props }, ref) => {
     return (
       <Button
         ref={ref}
@@ -16,7 +16,7 @@ const GAButton = React.forwardRef<HTMLButtonElement, GAButtonProps>(
           if (onClick) {
             onClick(...args);
           }
-          handleGAEvent(props.ga);
+          handleGAEvent(ga);
         }}
         {...props}
       >

@@ -1,4 +1,4 @@
-import ReactGA from "react-ga4";
+import { sendGAEvent } from "@next/third-parties/google";
 
 export interface IGAEvent {
   category: string;
@@ -10,7 +10,7 @@ export interface IGAEvent {
 }
 
 const handleGAEvent = (event: IGAEvent) => {
-  ReactGA.event({
+  sendGAEvent({
     category: event.category,
     action: event.action,
     label: event.label, // optional

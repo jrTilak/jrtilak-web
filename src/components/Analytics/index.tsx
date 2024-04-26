@@ -1,18 +1,15 @@
 "use client";
+import { sendGAEvent } from "@next/third-parties/google";
 import { usePathname } from "next/navigation";
 import { useEffect } from "react";
-import ReactGA from "react-ga4";
 const Analytics = () => {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (process.env.NODE_ENV === "production") {
-      ReactGA.send({
-        hitType: "pageview",
-        page: pathname,
-        title: document.title,
-      });
-    }
+    sendGAEvent({
+      event: "page_view",
+      page_path: pathname,
+    });
   }, [pathname]);
 
   return <div></div>;
