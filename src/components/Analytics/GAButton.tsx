@@ -26,4 +26,6 @@ const GAButton = React.forwardRef<HTMLButtonElement, GAButtonProps>(
   }
 );
 
+GAButton.displayName = "GAButton";
+
 export default GAButton;
