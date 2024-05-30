@@ -18,7 +18,6 @@ const GALink = ({
   target,
   ...props
 }: LinkProps) => {
-  console.log("GALink", href, target);
   return (
     <Link
       scroll={scroll}

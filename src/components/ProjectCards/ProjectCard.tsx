@@ -10,9 +10,10 @@ import {
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { Suspense } from "react";
-import { ChevronsRight, Github } from "lucide-react";
+import { ChevronsRight, Github, Info } from "lucide-react";
 import PROJECTS_JSON from "@/assets/json/projects";
 import GALink from "../Analytics/GALink";
+import { ProjectInfo } from "./ProjectInfo";
 
 const ProjectCard = ({
   type,
@@ -24,6 +25,8 @@ const ProjectCard = ({
   techs,
   isUnderDevelopment,
   i = 0,
+  orgType,
+  infoComponent: Info,
 }: (typeof PROJECTS_JSON)[number] & {
   i?: number;
 }) => {
@@ -128,6 +131,11 @@ const ProjectCard = ({
             </span>
           </GALink>
         </Button>
+        <ProjectInfo
+        orgType={orgType}
+        title={title} desc={desc}>
+          {Info && <Info />}
+        </ProjectInfo>
       </div>
     </div>
   );
