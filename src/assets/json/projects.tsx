@@ -8,7 +8,7 @@ import javaSportsImg from "@/assets/project-img/java-sports.png";
 import dhanalakshmiImg from "@/assets/project-img/dhanalakshmi.png";
 import lazykitImg from "@/assets/project-img/lazykit.png";
 import CGames from "@/components/ProjectsDetails/c-games";
-import { StaticImageData } from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 const PROJECTS_JSON: {
   img: string | StaticImageData;
@@ -133,6 +133,17 @@ const PROJECTS_JSON: {
     type: "CLI Game",
     _id: "c-games",
     orgType: "Academic",
+    infoComponent: () => (
+      <Image
+        src={cGamesImg}
+        alt="C Games"
+        width={500}
+        height={500}
+        quality={100}
+        placeholder="blur"
+        className="mt-4"
+      />
+    ),
   },
 ];
 
