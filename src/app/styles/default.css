@@ -1,5 +1,6 @@
 * {
   font-family: futura;
+  animation-fill-mode: forwards;
 }
 ::selection {
   color: rgb(134, 26, 134);

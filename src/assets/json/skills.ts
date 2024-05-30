@@ -43,7 +43,7 @@ const TECHS = [
     proficiency: 70,
     _id: "Firebase",
     level: "Proficient",
-    isFeatured: true,
+    isFeatured: false,
     link: "https://firebase.google.com/",
   },
   {
@@ -61,6 +61,7 @@ const TECHS = [
     title: "Express.js",
     icon: "https://www.svgrepo.com/show/330398/express.svg",
     level: "Proficient",
+    isFeatured: true,
     link: "https://expressjs.com/",
   },
   {

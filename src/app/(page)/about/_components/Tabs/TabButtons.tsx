@@ -8,7 +8,7 @@ export default function TabButtons({ activeTab }: { activeTab: string }) {
 
   return (
     <>
-      <div className="border-b bg-background border-gray-200 dark:border-gray-700 w-full sticky top-[60px] z-10">
+      <div className="border-b bg-background border-gray-200 dark:border-gray-700 w-full sticky top-[60px] md:top-[80px] z-10">
         <ul className="flex sm:justify-center overflow-x-scroll sm:overflow-x-auto w-full -mb-px text-sm font-medium text-center text-gray-500 dark:text-gray-400">
           {Tabs.map((Tab) => {
             if (activeTab === Tab.title.toLowerCase()) {
@@ -27,6 +27,7 @@ export default function TabButtons({ activeTab }: { activeTab: string }) {
               return (
                 <li className="mr-2" key={Tab.title}>
                   <GALink
+                    scroll={false}
                     ga={{
                       action: "click " + Tab.title,
                       category: "Tab Change in About Page",

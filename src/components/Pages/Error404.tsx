@@ -1,4 +1,9 @@
-import {  ChevronRight, GitCompareArrows, Home, SendHorizontal } from "lucide-react";
+import {
+  ChevronRight,
+  GitCompareArrows,
+  Home,
+  SendHorizontal,
+} from "lucide-react";
 import Link from "next/link";
 
 const Error404 = () => {
@@ -7,7 +12,7 @@ const Error404 = () => {
       name: "Home",
       desc: "Everything starts here",
       link: "/",
-      Icon: Home ,
+      Icon: Home,
     },
     {
       name: "Projects",
@@ -27,7 +32,9 @@ const Error404 = () => {
       <div className="flex flex-col gap-12">
         {/* <!-- Error Container --> */}
         <div className="flex flex-col justify-center m-auto items-center h-[60vh]">
-          <div className="text-primary font-bold text-9xl tracking-wide">Error 404</div>
+          <div className="text-primary font-bold text-center text-4xl sm:text-6xl  xl:text-9xl tracking-wide">
+            Error 404
+          </div>
           <div className="text-muted-foreground font-medium text-xs md:text-sm sm:text-md lg:text-xl mt-2">
             The page you are looking for could not be found.
           </div>

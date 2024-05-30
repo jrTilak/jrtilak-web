@@ -13,6 +13,7 @@ const nextConfig = {
       "docs.pmnd.rs",
     ],
   },
+  reactStrictMode: false,
 };
 
 module.exports = nextConfig;

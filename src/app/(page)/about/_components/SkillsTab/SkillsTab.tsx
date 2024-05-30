@@ -10,7 +10,7 @@ interface SkillsTabProps {
 const SkillsTab = ({ activeTab }: SkillsTabProps) => {
   return (
     <div className="mt-4 min-w-full">
-      <div className="flex flex-wrap gap-2 sm:gap-4 sticky top-[110px] z-10">
+      <div className="flex flex-wrap gap-2 sm:gap-4 sticky top-[110px] md:top-[130px] z-10">
         {skillTabs.map((tab, index) => {
           const { name, Icon } = tab;
           if (name === activeTab) {
@@ -27,6 +27,7 @@ const SkillsTab = ({ activeTab }: SkillsTabProps) => {
           } else {
             return (
               <GALink
+                scroll={false}
                 ga={{
                   action: "click " + name,
                   category: "Tab Change in Skills Page",
