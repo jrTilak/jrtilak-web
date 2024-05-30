@@ -7,8 +7,9 @@ import edubrainImg from "@/assets/project-img/edubrain.png";
 import javaSportsImg from "@/assets/project-img/java-sports.png";
 import dhanalakshmiImg from "@/assets/project-img/dhanalakshmi.png";
 import lazykitImg from "@/assets/project-img/lazykit.png";
-import CGames from "@/components/ProjectsDetails/c-games";
 import Image, { StaticImageData } from "next/image";
+import FSU from "@/components/ProjectsDetails/fsu";
+import Dhanalaxmi from "@/components/ProjectsDetails/dhanalaxmi";
 
 const PROJECTS_JSON: {
   img: string | StaticImageData;
@@ -51,6 +52,18 @@ const PROJECTS_JSON: {
     orgType: "Organization",
   },
   {
+    img: bumblebeeIMg,
+    sourceCode: "https://github.com/jrTilak/bumbleBee",
+    techs: ["Express.js", "Mongodb", "Vite.js", "React.js", "Tailwind CSS"],
+    liveDemo: "https://bumblebee.thapatilak.com.np/",
+    type: "Web App",
+    title: "Bumblebee - AI Powered Chatbot",
+    desc: "Bumblebee is an AI powered chatbot that can help you with your queries. It is a web based application that can be accessed from anywhere. It is built using React.js, Express.js, MongoDB, and Vite.js. It uses OpenAI's GPT-3 API to generate responses to user queries.",
+    _id: "bumblebee",
+    createdAt: "Jan 18, 2024",
+    orgType: "Personal",
+  },
+  {
     img: edubrainImg,
     techs: ["React.js", "Framer Motion", "Tailwind CSS"],
     liveDemo: "https://edubrain.vercel.app/",
@@ -73,18 +86,7 @@ const PROJECTS_JSON: {
     _id: "dhanlakshmi",
     createdAt: "April 10, 2024",
     orgType: "Organization",
-  },
-  {
-    img: bumblebeeIMg,
-    sourceCode: "https://github.com/jrTilak/bumbleBee",
-    techs: ["Express.js", "Mongodb", "Vite.js", "React.js", "Tailwind CSS"],
-    liveDemo: "https://bumblebee.thapatilak.com.np/",
-    type: "Web App",
-    title: "Bumblebee - AI Powered Chatbot",
-    desc: "Bumblebee is an AI powered chatbot that can help you with your queries. It is a web based application that can be accessed from anywhere. It is built using React.js, Express.js, MongoDB, and Vite.js. It uses OpenAI's GPT-3 API to generate responses to user queries.",
-    _id: "bumblebee",
-    createdAt: "Jan 18, 2024",
-    orgType: "Personal",
+    infoComponent: Dhanalaxmi
   },
   {
     img: travellianImg,
@@ -93,10 +95,21 @@ const PROJECTS_JSON: {
     liveDemo: "https://travellian.thapatilak.com.np/",
     type: "Web App",
     title: "Travellian - Travel Across the Globe",
-    desc: "Travellian is a travel agency Web App that provides the best travel experience for your journey. It is built with Vite, React, and Tailwind CSS as a front-end internship project.",
+    desc: "Travellian is a travel agency Web App that provides the best travel experience for your journey. It is built with Vite, React, and Tailwind CSS as a front-end internship assignment.",
     _id: "travellian",
     createdAt: "Feb 1, 2024",
     orgType: "Personal",
+    infoComponent: () => (
+      <Image
+        src={travellianImg}
+        alt="C Games"
+        width={500}
+        height={500}
+        quality={100}
+        placeholder="blur"
+        className="mt-4"
+      />
+    ),
   },
   {
     img: fsuImg,
@@ -109,10 +122,11 @@ const PROJECTS_JSON: {
     _id: "fsu",
     createdAt: "Jun 28, 2023",
     orgType: "Personal",
+    infoComponent: FSU,
   },
   {
     type: "Web App",
-    techs: ["Vite.js", "React.js", "Node.js", "CSS", "HTML"],
+    techs: ["Vite.js", "React.js", "CSS", "HTML"],
     liveDemo: "https://stringify.thapatilak.com.np/",
     img: stringifyImg,
     desc: "Stringify is a user-friendly web app that simplifies text manipulation. With its intuitive interface, you can effortlessly perform tasks like case conversions, find and replace, URL encoding, and much more.",
@@ -121,6 +135,17 @@ const PROJECTS_JSON: {
     _id: "stringify",
     createdAt: "Jun 13, 2023",
     orgType: "Personal",
+    infoComponent: () => (
+      <Image
+        src={stringifyImg}
+        alt="C Games"
+        width={500}
+        height={500}
+        quality={100}
+        placeholder="blur"
+        className="mt-4"
+      />
+    ),
   },
   {
     sourceCode: "https://github.com/jrTilak/C-Games",
