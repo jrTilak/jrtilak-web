@@ -4,6 +4,7 @@ import { useState } from "react";
 import Link from "next/link";
 import { CODING_SVG } from "@/assets/constants/placeholders";
 import SKILLS_JSON from "@/assets/json/skills";
+import getSkillLevel from "@/utils/getSkillLevel";
 
 interface SkillCardProps {
   skill?:
@@ -50,7 +51,10 @@ const SkillCard = ({ skill, i = 0 }: SkillCardProps) => {
           </div>
 
           <div className="absolute mt-5 text-sm font-light transition-all duration-300 opacity-0 group-hover:opacity-80 ">
-            {skill?.level || "10+ skills"}
+            {
+              // @ts-ignore
+              getSkillLevel(parseInt(skill?.proficiency)) || "10+ skills"
+            }
           </div>
         </div>
       </div>
