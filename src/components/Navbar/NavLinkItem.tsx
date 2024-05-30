@@ -8,12 +8,14 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({ link, pathName }) => {
   const isActiveLink = href.startsWith("http")
     ? false
     : pathName.split("/")[1] === href.split("/")[1];
+  const target = href.startsWith("https://") ? "_blank" : "_self";
+  console.log(href, target);
 
   return (
     <li>
       <GALink
         href={href}
-        target={href.startsWith("http") ? "_blank" : "_self"}
+        target={target}
         className={cn(
           "flex items-center p-2 rounded-lg  group",
           isActiveLink

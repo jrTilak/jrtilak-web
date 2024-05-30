@@ -23,6 +23,13 @@ const SOCIAL_LINKS = [
     Icon: Github,
   },
   {
+    type: "Discord",
+    username: "@jrtilak",
+    href: "https://discord.com/",
+    icon: "https://www.svgrepo.com/show/331368/discord-v2.svg",
+    Icon: Instagram,
+  },
+  {
     type: "Instagram",
     username: "@iamjrtilak",
     href: "https://www.instagram.com/iamjrtilak/",

@@ -10,10 +10,19 @@ type LinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
   scroll?: boolean;
 };
 
-const GALink = ({ children, href, ga, scroll, ...props }: LinkProps) => {
+const GALink = ({
+  children,
+  href,
+  ga,
+  scroll,
+  target,
+  ...props
+}: LinkProps) => {
+  console.log("GALink", href, target);
   return (
     <Link
       scroll={scroll}
+      target={target}
       onClick={() => handleGAEvent(ga)}
       href={href ? href.toString() : ""}
       {...props}
