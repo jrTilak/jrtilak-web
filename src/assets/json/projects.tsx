@@ -12,6 +12,7 @@ import FSU from "@/components/ProjectsDetails/fsu";
 import Dhanalaxmi from "@/components/ProjectsDetails/dhanalaxmi";
 import Bumblebee from "@/components/ProjectsDetails/bumblebee";
 import JavaSports from "@/components/ProjectsDetails/java-sports";
+import Lazykit from "@/components/ProjectsDetails/lazykit";
 
 const PROJECTS_JSON: {
   img: string | StaticImageData;
@@ -40,6 +41,7 @@ const PROJECTS_JSON: {
     createdAt: "March 17, 2024",
     isFeatured: true,
     orgType: "Personal",
+    infoComponent: Lazykit,
   },
   {
     img: javaSportsImg,
