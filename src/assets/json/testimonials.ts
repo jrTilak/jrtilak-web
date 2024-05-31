@@ -1,35 +1,21 @@
 const TESTIMONIALS: Testimonial[] = [
-  // {
-  //   img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww",
-  //   name: "John Doe",
-  //   title: "Accountant",
-  //   link: "",
-  //   review:
-  //     "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings of the great explorer of the truth, the master- builder of human happiness.",
-  // },
-  // {
-  //   img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww",
-  //   name: "John Smith",
-  //   title: "Journalist, HWO News",
-  //   link: "",
-  //   review:
-  //     "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system and expound the actual teachings.",
-  // },
-  // {
-  //   img: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fHww",
-  //   name: "Tamara Bellis",
-  //   title: "Managing Director, JTH",
-  //   link: "",
-  //   review:
-  //     "But I must explain to you how all this mistaken idea of denouncing pleasure and praising pain was born and I will give you a complete account of the system.",
-  // },
+  {
+    img: "https://media.licdn.com/dms/image/D4D03AQErezuiUVVUfg/profile-displayphoto-shrink_800_800/0/1713901442457?e=1722470400&v=beta&t=TU_edHWmOOxQ29GyOFbxIhauJDRHO9yGdkwMzU1JXVU",
+    name: "Mustafa Can Güzlük",
+    review:
+      "He is really a good person, he responds very quickly and he really helped me a lot, the projects he has done are very nice, especially the <a href='https://bumblebee.thapatilak.com.np/' class='link' target='_blank'>Bumblebee - AI Powered Chatbot project.</>",
+    profileLink: "https://www.linkedin.com/in/mustafa-can-guzluk/",
+    sourceIcon: "https://www.svgrepo.com/show/475661/linkedin-color.svg",
+  },
 ];
 type Testimonial = {
   img: string;
   name: string;
-  title: string;
-  link?: string;
+  title?: string;
+  profileLink: string;
   review: string;
+  reviewLink?: string;
+  sourceIcon: string;
 };
 
 export default TESTIMONIALS;

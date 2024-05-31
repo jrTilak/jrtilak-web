@@ -17,3 +17,7 @@
   -ms-overflow-style: none; /* IE and Edge */
   scrollbar-width: none; /* Firefox */
 }
+
+a.link {
+  @apply text-gray-700 underline;
+}
