@@ -58,7 +58,7 @@ const PROJECTS_JSON: {
     techs: ["Express.js", "Mongodb", "Vite.js", "React.js", "Tailwind CSS"],
     liveDemo: "https://bumblebee.thapatilak.com.np/",
     type: "Web App",
-    title: "Bumblebee - AI Powered Chatbot",
+    title: "Bumblebee 2.0 - AI Powered Chatbot",
     desc: "Bumblebee is an AI powered chatbot that can help you with your queries. It is a web based application that can be accessed from anywhere. It is built using MERN Stack and based on Google's gemini AI model with the profile of the transformer character Bumblebee. ",
     _id: "bumblebee",
     createdAt: "Jan 18, 2024",
