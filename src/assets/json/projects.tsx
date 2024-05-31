@@ -11,6 +11,7 @@ import Image, { StaticImageData } from "next/image";
 import FSU from "@/components/ProjectsDetails/fsu";
 import Dhanalaxmi from "@/components/ProjectsDetails/dhanalaxmi";
 import Bumblebee from "@/components/ProjectsDetails/bumblebee";
+import JavaSports from "@/components/ProjectsDetails/java-sports";
 
 const PROJECTS_JSON: {
   img: string | StaticImageData;
@@ -51,6 +52,7 @@ const PROJECTS_JSON: {
     createdAt: "February 5, 2024",
     isFeatured: true,
     orgType: "Organization",
+    infoComponent: JavaSports,
   },
   {
     img: bumblebeeIMg,
@@ -62,6 +64,7 @@ const PROJECTS_JSON: {
     desc: "Bumblebee is an AI powered chatbot that can help you with your queries. It is a web based application that can be accessed from anywhere. It is built using MERN Stack and based on Google's gemini AI model with the profile of the transformer character Bumblebee. ",
     _id: "bumblebee",
     createdAt: "Jan 18, 2024",
+    isFeatured: true,
     orgType: "Personal",
     infoComponent: Bumblebee,
   },
