@@ -11,6 +11,7 @@ const FSU = () => {
         width={500}
         height={500}
         quality={100}
+        className=" rounded-md"
         placeholder="blur"
       />
       <div className="flex flex-col gap-2">

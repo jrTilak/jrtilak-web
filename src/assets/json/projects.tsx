@@ -3,13 +3,14 @@ import bumblebeeIMg from "@/assets/project-img/bumblebee.png";
 import stringifyImg from "@/assets/project-img/stringify.png";
 import fsuImg from "@/assets/project-img/fsu.jpg";
 import cGamesImg from "@/assets/project-img/c.png";
-import edubrainImg from "@/assets/project-img/edubrain.png";
+// import edubrainImg from "@/assets/project-img/edubrain.png";
 import javaSportsImg from "@/assets/project-img/java-sports.png";
 import dhanalakshmiImg from "@/assets/project-img/dhanalakshmi.png";
 import lazykitImg from "@/assets/project-img/lazykit.png";
 import Image, { StaticImageData } from "next/image";
 import FSU from "@/components/ProjectsDetails/fsu";
 import Dhanalaxmi from "@/components/ProjectsDetails/dhanalaxmi";
+import Bumblebee from "@/components/ProjectsDetails/bumblebee";
 
 const PROJECTS_JSON: {
   img: string | StaticImageData;
@@ -58,10 +59,11 @@ const PROJECTS_JSON: {
     liveDemo: "https://bumblebee.thapatilak.com.np/",
     type: "Web App",
     title: "Bumblebee - AI Powered Chatbot",
-    desc: "Bumblebee is an AI powered chatbot that can help you with your queries. It is a web based application that can be accessed from anywhere. It is built using React.js, Express.js, MongoDB, and Vite.js. It uses OpenAI's GPT-3 API to generate responses to user queries.",
+    desc: "Bumblebee is an AI powered chatbot that can help you with your queries. It is a web based application that can be accessed from anywhere. It is built using MERN Stack and based on Google's gemini AI model with the profile of the transformer character Bumblebee. ",
     _id: "bumblebee",
     createdAt: "Jan 18, 2024",
     orgType: "Personal",
+    infoComponent: Bumblebee,
   },
   // {
   //   img: edubrainImg,
@@ -107,7 +109,7 @@ const PROJECTS_JSON: {
         height={500}
         quality={100}
         placeholder="blur"
-        className="mt-4"
+        className="mt-4 rounded-md"
       />
     ),
   },
@@ -143,7 +145,7 @@ const PROJECTS_JSON: {
         height={500}
         quality={100}
         placeholder="blur"
-        className="mt-4"
+        className="mt-4 rounded-md"
       />
     ),
   },
@@ -166,7 +168,7 @@ const PROJECTS_JSON: {
         height={500}
         quality={100}
         placeholder="blur"
-        className="mt-4"
+        className="mt-4 rounded-md"
       />
     ),
   },
