@@ -126,24 +126,41 @@ export const GET = async (req: NextRequest) => {
 
     const userChats = await Chats.findById(userId);
     // if user has no credits, and creditsExpireAt is at  least 24 hours ago, reset credits
-    if (userChats.credits <= 0) {
-      const creditsExpireAt = new Date(userChats.creditsExpireAt).getTime();
-      const now = new Date().getTime();
-      if (now - creditsExpireAt >= 24 * 60 * 60 * 1000) {
-        userChats.credits = 25;
-        userChats.creditsExpireAt = new Date().toISOString();
-        await userChats.save();
-      }
+    if (!userChats) {
+      // create a new chat
+      const user = new Chats({
+        chats: [],
+      });
+      await user.save();
+      const token = createToken(user._id);
+      const cookieStore = cookies();
+      cookieStore.set(AUTH_TOKEN, token, {
+        httpOnly: true,
+        secure: true,
+        sameSite: "none",
+        path: "/",
+        domain: process.env.FRONTEND_DOMAIN,
+      });
       return NextResponse.json({
-        chats: userChats.chats,
-        message: `Welcome back!`,
+        chats: [],
         credits: 25,
+        message: "No chats found.",
       });
     }
+
+    const creditsExpireAt = new Date(userChats.creditsExpireAt).getTime();
+    const now = new Date().getTime();
+    const shouldResetCredits = now - creditsExpireAt >= 24 * 60 * 60 * 1000;
+    if (shouldResetCredits) {
+      userChats.credits = 25;
+      userChats.creditsExpireAt = "";
+      await userChats.save();
+    }
+
     return NextResponse.json({
       chats: userChats.chats,
       message: `Welcome back!`,
-      credits: userChats.credits,
+      credits: shouldResetCredits ? 25 : userChats.credits,
     });
   } catch (e) {
     console.error(e);

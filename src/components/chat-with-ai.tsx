@@ -7,6 +7,7 @@ import React, { useEffect, useRef, useState } from "react";
 import toast from "react-hot-toast";
 import Markdown from "react-markdown";
 import ReactLoading from "react-loading";
+import { Skeleton } from "./ui/skeleton";
 
 const ChatWithAI = () => {
   const chatContainerRef = useRef<HTMLDivElement>(null);
@@ -38,7 +39,7 @@ const ChatWithAI = () => {
         behavior: "smooth",
       });
     }
-  }, [isChatOpen]);
+  }, [isChatOpen, chats]);
 
   const onSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -74,12 +75,6 @@ const ChatWithAI = () => {
       .catch((error) => {
         toast.error(error);
         setIsChatSending(false);
-      })
-      .finally(() => {
-        chatContainerRef.current?.scrollTo({
-          top: chatContainerRef.current.scrollHeight,
-          behavior: "smooth",
-        });
       });
   };
 
@@ -95,7 +90,8 @@ const ChatWithAI = () => {
           onClick={() => setIsChatOpen((prev) => !prev)}
           className="bg-purple-500 text-white py-2 px-4 rounded-md hover:bg-purple-600 transition duration-300 flex items-center"
         >
-          Chat with Prime AI <MessageCircle className="ml-3" />
+          <span className="hidden sm:inline">Chat with Prime</span> AI{" "}
+          <MessageCircle className="ml-3" />
         </button>
       </div>
       <div
@@ -103,7 +99,7 @@ const ChatWithAI = () => {
           scale: isChatOpen ? 1 : 0,
         }}
         id="chat-container"
-        className="fixed bottom-16 right-4 w-96 z-40"
+        className="fixed bottom-16 right-4 w-96 max-w-[90%] z-40"
       >
         <div className="bg-white shadow-md rounded-lg max-w-lg w-full">
           <div className="p-4 border-b bg-indigo-400 text-white rounded-t-lg flex justify-between items-center">
@@ -125,25 +121,40 @@ const ChatWithAI = () => {
             ref={chatContainerRef}
             className="p-4 h-80 overflow-y-auto prose-sm prose-p:m-0 prose-a:text-blue-400 prose-a:underline"
           >
-            {chats.map((chat, index) => {
-              if (chat.role === "user") {
-                return (
-                  <div key={index} className="mb-2 text-right">
-                    <p className="bg-blue-500 text-white rounded-lg py-2 px-4 inline-block">
-                      <Markdown>{chat.parts[0].text}</Markdown>
-                    </p>
-                  </div>
-                );
-              } else {
-                return (
-                  <div key={index} className="mb-2">
-                    <p className="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">
-                      <Markdown>{chat.parts[0].text}</Markdown>
-                    </p>
-                  </div>
-                );
-              }
-            })}
+            {isChatsFetching ? (
+              <>
+                <Skeleton className="h-12 w-full mb-2 mt-auto" />
+                <Skeleton className="h-12 w-3/4 mb-2 ml-auto" />
+                <Skeleton className="h-12 w-1/2  ml-auto mb-2" />
+                <Skeleton className="h-12 w-3/4 mb-2" />
+                <Skeleton className="h-12 w-1/2  ml-auto mb-2" />
+                <Skeleton className="h-12 w-1/2  ml-auto mb-2" />
+              </>
+            ) : chats.length === 0 ? (
+              <p className="text-center text-gray-500 flex items-center justify-center h-full">
+                No chats yet.
+              </p>
+            ) : (
+              chats.map((chat, index) => {
+                if (chat.role === "user") {
+                  return (
+                    <div key={index} className="mb-2 text-right">
+                      <p className="bg-blue-500 text-white rounded-lg py-2 px-4 inline-block">
+                        <Markdown>{chat.parts[0].text}</Markdown>
+                      </p>
+                    </div>
+                  );
+                } else {
+                  return (
+                    <div key={index} className="mb-2">
+                      <p className="bg-gray-200 text-gray-700 rounded-lg py-2 px-4 inline-block">
+                        <Markdown>{chat.parts[0].text}</Markdown>
+                      </p>
+                    </div>
+                  );
+                }
+              })
+            )}
           </div>
           <form onSubmit={onSubmit} className="p-4 border-t flex">
             <input
