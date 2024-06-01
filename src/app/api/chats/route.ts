@@ -82,14 +82,17 @@ export const POST = async (req: NextRequest) => {
       message: "OK",
       data: text,
     };
-    return NextResponse.json({
-      response,
-    });
-  } catch (e) {
-    console.error(e);
-    return NextResponse.json({
-      message: "Unexpected error occurred. Please try again later.",
-    });
+    return NextResponse.json(response);
+  } catch (e: any) {
+    return NextResponse.json(
+      {
+        message:
+          e.message ?? "Unexpected error occurred. Please try again later.",
+      },
+      {
+        status: 500,
+      }
+    );
   }
 };
 
@@ -97,9 +100,7 @@ export const GET = async (req: NextRequest) => {
   try {
     await dbConnect();
     const cookie = req.cookies.get(AUTH_TOKEN);
-    console.log(cookie);
     const userId = await verifyToken(cookie?.value ?? "");
-    console.log(userId);
 
     if (!userId) {
       // create a new chat
@@ -118,19 +119,41 @@ export const GET = async (req: NextRequest) => {
       });
       return NextResponse.json({
         chats: [],
+        credits: 25,
         message: "No chats found.",
       });
     }
 
     const userChats = await Chats.findById(userId);
+    // if user has no credits, and creditsExpireAt is at  least 24 hours ago, reset credits
+    if (userChats.credits <= 0) {
+      const creditsExpireAt = new Date(userChats.creditsExpireAt).getTime();
+      const now = new Date().getTime();
+      if (now - creditsExpireAt >= 24 * 60 * 60 * 1000) {
+        userChats.credits = 25;
+        userChats.creditsExpireAt = new Date().toISOString();
+        await userChats.save();
+      }
+      return NextResponse.json({
+        chats: userChats.chats,
+        message: `Welcome back!`,
+        credits: 25,
+      });
+    }
     return NextResponse.json({
       chats: userChats.chats,
       message: `Welcome back!`,
+      credits: userChats.credits,
     });
   } catch (e) {
     console.error(e);
-    return NextResponse.json({
-      message: "Unexpected error occurred. Please try again later.",
-    });
+    return NextResponse.json(
+      {
+        message: "Unexpected error occurred. Please try again later.",
+      },
+      {
+        status: 500,
+      }
+    );
   }
 };
