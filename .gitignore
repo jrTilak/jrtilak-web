@@ -38,3 +38,5 @@ next-env.d.ts
 #temp
 /temp*
 temp*
+
+.env

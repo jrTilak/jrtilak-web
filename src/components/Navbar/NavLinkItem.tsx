@@ -9,7 +9,6 @@ const NavLinkItem: React.FC<NavLinkItemProps> = ({ link, pathName }) => {
     ? false
     : pathName.split("/")[1] === href.split("/")[1];
   const target = href.startsWith("https://") ? "_blank" : "_self";
-  console.log(href, target);
 
   return (
     <li>
