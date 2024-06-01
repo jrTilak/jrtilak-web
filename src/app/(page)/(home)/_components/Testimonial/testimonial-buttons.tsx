@@ -9,7 +9,6 @@ const TestimonialButtons = () => {
     if (testimonials) {
       const container = testimonials;
       const scrollAmount = document.documentElement.clientWidth / 2;
-      console.log(scrollAmount);
       if (direction === "left") {
         container.scrollTo({
           left: container.scrollLeft - scrollAmount,
