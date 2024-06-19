@@ -31,8 +31,8 @@ const SOCIAL_LINKS = [
   },
   {
     type: "Instagram",
-    username: "@iamjrtilak",
-    href: "https://www.instagram.com/iamjrtilak/",
+    username: "@jrtilak.dev",
+    href: "https://www.instagram.com/jrtilak.dev/",
     icon: "https://www.svgrepo.com/show/452229/instagram-1.svg",
     Icon: Instagram,
   },
