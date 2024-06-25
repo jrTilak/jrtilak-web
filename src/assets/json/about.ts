@@ -4,8 +4,16 @@ import bootcamp from "@/assets/certifications-img/The Complete 2023 Web Developm
 import fsu from "@/assets/certifications-img/FSU Webdev.jpg";
 import lor from "@/assets/certifications-img/Letter of Recommendatin.jpg";
 import internshipImg from "@/assets/certifications-img/Certificate_internship.jpg";
+import htmlCss from "@/assets/certifications-img/html-css.png";
 
 const CERTIFICATIONS = [
+  {
+    _id: "HTML_CSS_ACES_Training",
+    img: htmlCss,
+    href: "https://aces.ioepc.edu.np/",
+    type: "Tutor",
+    title: "HTML/CSS Tutor at ACES",
+  },
   {
     _id: "Web_Development_Internship_at_Prodigy_InfoTech_2023-11-04-11:10:07",
     img: internshipImg,
@@ -76,8 +84,7 @@ const TITLES = [
   "Freelancer",
 ];
 
-const ABOUT =
-  `🙋\u200d♂️ Greetings! I'm Tilak Thapa(jrTilak), a passionate web developer with more than ${formattedExperience} years of experience. I specialize web development in \`MERN Stack\` and also proficient in \`Next.js\`. I'm also a huge fan of open-source. I'm currently looking for opportunities to work as a Full Stack Developer.`;
+const ABOUT = `🙋\u200d♂️ Greetings! I'm Tilak Thapa(jrTilak), a passionate web developer with more than ${formattedExperience} years of experience. I specialize web development in \`MERN Stack\` and also proficient in \`Next.js\`. I'm also a huge fan of open-source. I'm currently looking for opportunities to work as a Full Stack Developer.`;
 
 const EDUCATION = [
   {
@@ -117,6 +124,5 @@ const ABOUT_JSON = {
   greetings: "Hey!",
   education: EDUCATION,
   certifications: CERTIFICATIONS,
-  
 };
 export default ABOUT_JSON;
