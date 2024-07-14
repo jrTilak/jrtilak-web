@@ -13,6 +13,7 @@ import Dhanalaxmi from "@/components/ProjectsDetails/dhanalaxmi";
 import Bumblebee from "@/components/ProjectsDetails/bumblebee";
 import JavaSports from "@/components/ProjectsDetails/java-sports";
 import Lazykit from "@/components/ProjectsDetails/lazykit";
+import aces from "@/assets/project-img/aces.png";
 
 const PROJECTS_JSON: {
   img: string | StaticImageData;
@@ -29,6 +30,29 @@ const PROJECTS_JSON: {
   orgType: "Personal" | "Academic" | "Organization";
   infoComponent?: React.FC;
 }[] = [
+  {
+    img: aces,
+    techs: ["Next.js", "Tailwind CSS", "Vercel"],
+    liveDemo: "https://aces-ioepc.vercel.app/",
+    type: "Full Stack Web App",
+    title: "ACES - Association of Computer Engineering Students",
+    desc: "ACES web is a platform for the Association of Computer Engineering Students (ACES) of the IOE, Purwanchal Campus, Dharan. It is a full stack web application with client-side, admin-panel and apis. It is built using Next.js, Tailwind CSS, and Vercel.",
+    _id: "aces",
+    createdAt: "May 5, 2024",
+    isFeatured: true,
+    orgType: "Academic",
+    infoComponent: () => (
+      <Image
+        src={aces}
+        alt="C Games"
+        width={500}
+        height={500}
+        quality={100}
+        placeholder="blur"
+        className="mt-4 rounded-md"
+      />
+    ),
+  },
   {
     img: lazykitImg,
     sourceCode: "https://github.com/jrTilak/lazykit",
@@ -66,7 +90,6 @@ const PROJECTS_JSON: {
     desc: "Bumblebee is an AI powered chatbot that can help you with your queries. It is a web based application that can be accessed from anywhere. It is built using MERN Stack and based on Google's gemini AI model with the profile of the transformer character Bumblebee. ",
     _id: "bumblebee",
     createdAt: "Jan 18, 2024",
-    isFeatured: true,
     orgType: "Personal",
     infoComponent: Bumblebee,
   },
