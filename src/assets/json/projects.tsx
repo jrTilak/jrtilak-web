@@ -35,7 +35,7 @@ const PROJECTS_JSON: {
     techs: ["Next.js", "Tailwind CSS", "Vercel"],
     liveDemo: "https://aces-ioepc.vercel.app/",
     type: "Full Stack Web App",
-    title: "ACES - Association of Computer Engineering Students",
+    title: "ACES Web - IOE",
     desc: "ACES web is a platform for the Association of Computer Engineering Students (ACES) of the IOE, Purwanchal Campus, Dharan. It is a full stack web application with client-side, admin-panel and apis. It is built using Next.js, Tailwind CSS, and Vercel.",
     _id: "aces",
     createdAt: "May 5, 2024",
